@@ -1,6 +1,15 @@
-const promoButton = document.querySelector("#promoButton");
+const promoBtn = document.getElementById("promoBtn");
+const promoBox = document.getElementById("promoBox");
+const closePromoBtn = document.getElementById("closePromoBtn");
 
-promoButton.addEventListener("click", () => {
-    promoButton.textContent = "Promo: Install Ulang Windows + Software + Game Gratis!";
-    console.log("Promo Jasa Oprek Yuhans berhasil ditampilkan.");
-});
+if (promoBtn && promoBox) {
+    promoBtn.addEventListener("click", function () {
+        promoBox.classList.toggle("sembunyi");
+    });
+}
+
+if (closePromoBtn && promoBox) {
+    closePromoBtn.addEventListener("click", function () {
+        promoBox.classList.add("sembunyi");
+    });
+}

@@ -4,29 +4,152 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Jasa Oprek Yuhans - Website UMKM</title>
+    <title>Jasa Oprek Yuhans - Service Android & PC Pekalongan</title>
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-    <main class="page">
-        <section class="hero">
-            <p class="eyebrow">UMKM Pekalongan Ganteng</p>
-            <h1>Jasa Oprek Yuhans</h1>
-            <p>Melayani Custom ROM, Root, Clean Flash, Install Ulang baik Windows ataupun Linux dan service smartphone lainnya.</p>
-            <button id="promoButton" type="button">Lihat promo hari ini</button>
-        </section>
+    <div class="page">
+        <!-- navigasi -->
+        <header class="navbar">
+            <div class="brand">
+                <span class="brand-name">Jasa Oprek Yuhans</span>
+                <span class="status-badge">Pekalongan</span>
+            </div>
+            <a href="https://wa.me/6281234567890?text=Halo%20Mas%20Yuhans,%20mau%20konsultasi%20oprek" 
+               target="_blank" 
+               class="btn btn-outline">
+               Hubungi WA
+            </a>
+        </header>
 
-        <section aria-labelledby="produk-title">
-            <h2 id="produk-title">Produk Unggulan</h2>
-            <ul class="products">
-                <li>Full Oprek ( Custom ROM, TWRP, ROOT via SukiSU ) - Rp75.000</li>
-                <li>Custom ROM ( Xiaomi , Samsung, Poco, dll) - Rp50.000</li>
-                <li>Install Ulang Windows & Linux - Rp40.000</li>
-                <li>Install Ulang Windows & Linux - Rp40.000</li>
-            </ul>
-        </section>
-    </main>
+        <main>
+            <!-- hero -->
+            <section class="hero">
+                <p class="eyebrow">UMKM Servis Digital & Oprek Gadget</p>
+                <h1>Solusi Oprek Android & Instalasi OS Bersih, Cepat, dan Rapi.</h1>
+                <p class="hero-desc">
+                    Bantu maksimalkan performa HP Android dan PC/laptop kamu. Mulai dari pasang Custom ROM, Root, atasi bootloop, hingga instal ulang Windows & Linux siap pakai.
+                </p>
+                <div class="hero-actions">
+                    <button id="promoBtn" type="button" class="btn btn-promo">Cek Promo Hari Ini</button>
+                    <a href="#layanan" class="btn btn-secondary">Lihat Daftar Tarif</a>
+                </div>
+
+                <!-- banner promo -->
+                <div id="promoBox" class="promo-box sembunyi">
+                    <div class="promo-text">
+                        <span class="promo-badge">Promo Terbatas</span>
+                        <span><strong>Paket Komplit PC:</strong> Install Ulang Windows 10/11 + Full Driver + Software Esensial cuma <strong>Rp40.000</strong>!</span>
+                    </div>
+                    <button id="closePromoBtn" type="button" class="close-btn" aria-label="Tutup">&times;</button>
+                </div>
+            </section>
+
+            <!-- layanan -->
+            <section id="layanan" class="section">
+                <div class="section-title">
+                    <h2>Layanan & Tarif</h2>
+                    <p>Pengerjaan teliti, tarif bersahabat, dan bisa konsultasi tipe perangkat dulu.</p>
+                </div>
+
+                <div class="card-grid">
+                    <!-- kartu -->
+                    <article class="card">
+                        <div class="card-top">
+                            <span class="chip">Android</span>
+                            <span class="price">Rp50.000</span>
+                        </div>
+                        <h3>Custom ROM</h3>
+                        <p>Ganti ROM bawaan yang berat ke custom ROM (AOSP, PixelOS, Lineage). HP jadi lebih adem, enteng, dan minim bloatware.</p>
+                        <ul class="features">
+                            <li>Xiaomi, Redmi, POCO, Samsung, dll</li>
+                            <li>Termasuk pasang TWRP / OrangeFox</li>
+                            <li>Bebas pilih varian ROM yang stabil</li>
+                        </ul>
+                        <a href="https://wa.me/6281234567890?text=Halo%20Mas%20Yuhans,%20mau%20order%20Custom%20ROM" target="_blank" class="btn btn-card">Pesan Jasa</a>
+                    </article>
+
+                    <!-- kartu 2 -->
+                    <article class="card featured">
+                        <div class="card-top">
+                            <span class="chip popular">Paling Lengkap</span>
+                            <span class="price">Rp75.000</span>
+                        </div>
+                        <h3>Full Oprek Android</h3>
+                        <p>Paket komplit untuk gaming atau kebutuhan custom maksimal tanpa repot utak-atik sendiri.</p>
+                        <ul class="features">
+                            <li>Unlock Bootloader (UBL) + TWRP</li>
+                            <li>Custom ROM Gaming / Daily Driver</li>
+                            <li>Root (Magisk / KernelSU / SukiSU)</li>
+                            <li>Bypass deteksi perbankan (opsional)</li>
+                        </ul>
+                        <a href="https://wa.me/6281234567890?text=Halo%20Mas%20Yuhans,%20mau%20order%20Full%20Oprek" target="_blank" class="btn btn-primary">Pesan Paket Lengkap</a>
+                    </article>
+
+                    <!-- kartu 3 -->
+                    <article class="card">
+                        <div class="card-top">
+                            <span class="chip">PC & Laptop</span>
+                            <span class="price">Rp40.000</span>
+                        </div>
+                        <h3>Install Ulang OS</h3>
+                        <p>Bersihkan laptop atau PC dari virus dan lag. Sistem bersih (clean install) siap langsung dipakai harian.</p>
+                        <ul class="features">
+                            <li>Windows 10 / 11 atau Linux (Ubuntu/Mint)</li>
+                            <li>Update driver hardware lengkap</li>
+                            <li>Aplikasi standar (Office, Browser, PDF, Media)</li>
+                        </ul>
+                        <a href="https://wa.me/6281234567890?text=Halo%20Mas%20Yuhans,%20mau%20install%20ulang%20PC/Laptop" target="_blank" class="btn btn-card">Pesan Jasa</a>
+                    </article>
+
+                    <!-- kartu 4 -->
+                    <article class="card">
+                        <div class="card-top">
+                            <span class="chip">Darurat</span>
+                            <span class="price">Mulai Rp40.000</span>
+                        </div>
+                        <h3>Fix Bootloop & Flash</h3>
+                        <p>Solusi HP mentok logo (bootloop), mati suri, gagal update sistem, atau ingin balik ke firmware bawaan pabrik.</p>
+                        <ul class="features">
+                            <li>Clean flash official firmware</li>
+                            <li>Unbrick via Fastboot / EDL / Odin</li>
+                            <li>Pengecekan partisi sistem</li>
+                        </ul>
+                        <a href="https://wa.me/6281234567890?text=Halo%20Mas%20Yuhans,%20HP%20saya%20bootloop%20butuh%20bantuan" target="_blank" class="btn btn-card">Konsultasi Dulu</a>
+                    </article>
+                </div>
+            </section>
+
+            <!-- catatan servis -->
+            <section class="section">
+                <div class="notes-box">
+                    <h3>Catatan Sebelum Pengerjaan</h3>
+                    <div class="notes-grid">
+                        <div class="note-item">
+                            <strong>1. Backup Data</strong>
+                            <p>Amankan foto, kontak, dan dokumen penting sebelum flash atau install ulang.</p>
+                        </div>
+                        <div class="note-item">
+                            <strong>2. Konsultasi Gratis</strong>
+                            <p>Tanyakan tipe perangkat dan kendala via WhatsApp sebelum deal pengerjaan.</p>
+                        </div>
+                        <div class="note-item">
+                            <strong>3. Garansi Sistem</strong>
+                            <p>Jaminan pengerjaan rapi serta panduan penggunaan setelah selesai dioprek.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- footer -->
+        <footer class="footer">
+            <p>&copy; 2026 Jasa Oprek Yuhans • Pekalongan, Jawa Tengah</p>
+            <p class="footer-sub">Melayani servis gadget dengan amanah, teliti, dan transparan.</p>
+        </footer>
+    </div>
+
     <script src="js/script.js"></script>
 </body>
 
