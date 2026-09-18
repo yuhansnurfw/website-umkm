@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  background: #fbf7f0;
+  color: #2f2118;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  padding: 16px 24px;
+  background: white;
+  border-bottom: 1px solid #ead8c3;
+}
+
+.brand {
+  color: #4b2e21;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #4b2e21;
+  font-weight: 700;
+}
+
+a:focus-visible {
+  outline: 3px solid #ffd166;
+  outline-offset: 4px;
+}
+
+main {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 28px 20px;
+}
+
+.hero {
+  border-radius: 24px;
+  background: linear-gradient(135deg, #4b2e21, #8d5a3b);
+  color: white;
+  padding: 34px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.82;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 7vw, 3.8rem);
+  line-height: 1;
+}
+
+.profile-image {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 18px;
+  object-fit: cover;
+}
+
+ul {
+  line-height: 1.8;
+}
+
+.site-footer {
+  padding: 24px;
+  background: #2f2118;
+  color: white;
+  text-align: center;
+}
+
+.skip-link { position: absolute; left: -9999px; padding: 8px 12px; color: white; background: #2f2118; }
+.skip-link:focus { top: 8px; left: 8px; }
+.site-header { padding: 16px 20px; background: white; border-bottom: 1px solid #dccbbc; }
+.nav { max-width: 920px; margin: 0 auto; }
+.brand { display: inline-block; margin-bottom: 8px; color: #4b2715; font-weight: 800; text-decoration: none; }
+.nav ul { padding: 0; margin: 0; list-style: none; }
+.nav li { display: inline-block; margin-right: 12px; }
+.nav a[aria-current="page"] { font-weight: 800; }
+a:focus-visible,
+button:focus-visible { outline: 3px solid #2563eb; outline-offset: 3px; }
+.site-footer { padding: 24px 20px; color: white; text-align: center; background: #2f2118; }
+
+.product-card {
+  margin-top: 16px;
+  padding: 16px;
+  background: white;
+  border: 1px solid #ead8c3;
+  border-radius: 12px;
+}
+
+.contact-section {
+  margin-top: 24px;
+  padding: 20px;
+  background: #f3ece2;
+  border-radius: 12px;
+}

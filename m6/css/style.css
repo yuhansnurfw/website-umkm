@@ -1,0 +1,3 @@
+body { font-family: system-ui, sans-serif; line-height: 1.6; padding: 1rem; }
+nav a { display: inline-block; margin-right: 1rem; }
+a:focus-visible { outline: 3px solid #c2410c; outline-offset: 3px; }
