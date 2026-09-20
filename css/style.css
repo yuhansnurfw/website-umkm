@@ -1,111 +1,215 @@
+/* Reset dasar & aksesibilitas */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  background: #fbf7f0;
-  color: #2f2118;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  color: #1e293b;
+  background-color: #f8fafc;
+  padding: 0;
 }
 
-.site-header {
-  position: sticky;
-  top: 0;
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  align-items: center;
-  padding: 16px 24px;
-  background: white;
-  border-bottom: 1px solid #ead8c3;
-}
-
-.brand {
-  color: #4b2e21;
-  font-weight: 800;
+/* Skip link untuk navigasi keyboard */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 1rem;
+  background: #0284c7;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
   text-decoration: none;
+  font-weight: 600;
+  border-radius: 0 0 4px 4px;
+  z-index: 1000;
 }
 
-nav {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
+.skip-link:focus {
+  top: 0;
 }
 
-nav a {
-  color: #4b2e21;
-  font-weight: 700;
+/* Header & Navigasi */
+.site-header {
+  background-color: #0f172a;
+  border-bottom: 2px solid #0284c7;
+  padding: 0.75rem 1.5rem;
 }
 
-a:focus-visible {
-  outline: 3px solid #ffd166;
-  outline-offset: 4px;
-}
-
-main {
-  max-width: 980px;
+.nav {
+  max-width: 960px;
   margin: 0 auto;
-  padding: 28px 20px;
+  display: block;
 }
 
-.hero {
-  border-radius: 24px;
-  background: linear-gradient(135deg, #4b2e21, #8d5a3b);
-  color: white;
-  padding: 34px;
+.nav .brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #38bdf8;
+  text-decoration: none;
+  margin-right: 1.5rem;
+  display: inline-block;
+}
+
+.nav ul {
+  list-style: none;
+  margin: 0.5rem 0 0 0;
+  padding: 0;
+  display: inline-block;
+}
+
+.nav li {
+  display: inline-block;
+  margin-right: 1.25rem;
+}
+
+.nav a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+}
+
+.nav a:hover,
+.nav a:focus {
+  color: #38bdf8;
+  text-decoration: underline;
+}
+
+.nav a[aria-current="page"] {
+  color: #ffffff;
+  font-weight: 700;
+  border-bottom: 2px solid #38bdf8;
+}
+
+/* Layout Konten Utama */
+.page {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+h1, h2, h3 {
+  color: #0f172a;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .eyebrow {
-  margin: 0 0 8px;
-  letter-spacing: 0.14em;
+  color: #0284c7;
+  font-weight: 600;
   text-transform: uppercase;
-  opacity: 0.82;
+  letter-spacing: 0.05em;
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
 }
 
-h1 {
-  margin: 0;
-  font-size: clamp(2rem, 7vw, 3.8rem);
-  line-height: 1;
+button,
+#promoButton {
+  background-color: #0284c7;
+  color: #ffffff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 0.75rem 0 1rem;
+  display: inline-block;
+  font-family: inherit;
 }
 
-.profile-image {
+button:hover,
+#promoButton:hover {
+  background-color: #0369a1;
+}
+
+button:focus-visible,
+#promoButton:focus-visible {
+  outline: 3px solid #38bdf8;
+  outline-offset: 2px;
+}
+
+/* Gambar & Media Semantik P03 */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+figure {
+  margin: 0 0 24px 0;
+}
+
+figcaption {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+.media-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* Audio Player */
+audio {
   width: 100%;
-  max-width: 420px;
-  border-radius: 18px;
-  object-fit: cover;
+  max-width: 480px;
+  margin-top: 0.5rem;
+  display: block;
 }
 
-ul {
-  line-height: 1.8;
+/* Tabel Katalog P03 */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  background-color: #ffffff;
 }
 
+caption {
+  margin-bottom: 8px;
+  font-weight: 700;
+  text-align: left;
+  font-size: 1.1rem;
+  color: #0f172a;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #cbd5e1;
+}
+
+thead th {
+  background-color: #0f172a;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+tbody th[scope="row"] {
+  background-color: #f1f5f9;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+tbody tr:nth-child(even) td {
+  background-color: #f8fafc;
+}
+
+/* Footer */
 .site-footer {
-  padding: 24px;
-  background: #2f2118;
-  color: white;
+  background-color: #0f172a;
+  color: #94a3b8;
   text-align: center;
-}
-
-.skip-link { position: absolute; left: -9999px; padding: 8px 12px; color: white; background: #2f2118; }
-.skip-link:focus { top: 8px; left: 8px; }
-.site-header { padding: 16px 20px; background: white; border-bottom: 1px solid #dccbbc; }
-.nav { max-width: 920px; margin: 0 auto; }
-.brand { display: inline-block; margin-bottom: 8px; color: #4b2715; font-weight: 800; text-decoration: none; }
-.nav ul { padding: 0; margin: 0; list-style: none; }
-.nav li { display: inline-block; margin-right: 12px; }
-.nav a[aria-current="page"] { font-weight: 800; }
-a:focus-visible,
-button:focus-visible { outline: 3px solid #2563eb; outline-offset: 3px; }
-.site-footer { padding: 24px 20px; color: white; text-align: center; background: #2f2118; }
-
-.product-card {
-  margin-top: 16px;
-  padding: 16px;
-  background: white;
-  border: 1px solid #ead8c3;
-  border-radius: 12px;
-}
-
-.contact-section {
-  margin-top: 24px;
-  padding: 20px;
-  background: #f3ece2;
-  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  border-top: 1px solid #334155;
 }

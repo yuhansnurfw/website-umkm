@@ -1,1 +1,0 @@
-console.log("Landmark siap diaudit melalui Elements dan keyboard");
