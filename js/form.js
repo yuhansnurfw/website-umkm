@@ -9,20 +9,16 @@ if (form && preview) {
 
     const nama = data.get("nama") || "-";
     const email = data.get("email") || "-";
-    const telepon = data.get("telepon") || "-";
     const paket = data.get("paket") || "-";
     const topik = data.get("topik") || "-";
-    const waktu = data.get("waktu") || "-";
     const pesan = data.get("pesan") || "-";
 
     preview.textContent = [
       "=== DATA PERMINTAAN SERVIS JASAOPREK ===",
       `Nama Pelanggan  : ${nama}`,
       `Email           : ${email}`,
-      `Nomor WhatsApp  : ${telepon}`,
       `Paket Layanan   : ${paket}`,
       `Topik Konsultasi: ${topik}`,
-      `Waktu Dihubungi : ${waktu}`,
       `Detail / Pesan  : ${pesan}`,
       "========================================",
       "Status: Form terkirim sukses tanpa reload. Teknisi akan segera memproses permintaan Anda.",
