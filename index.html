@@ -3,14 +3,26 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Beranda - JasaOprek Modifikasi Android & PC</title>
+    <title>JasaOprek - Modifikasi Android &amp; Optimasi OS</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#konten">Lewati ke konten utama</a>
     <header class="site-header">
       <nav class="nav" aria-label="Navigasi utama">
-        <a class="brand" href="index.html">JasaOprek</a>
+        <a class="brand" href="index.html">
+          <span class="brand-icon">
+            <span class="iconify" data-icon="tabler:device-mobile-cog"></span>
+          </span>
+          <span class="brand-text">
+            <span class="brand-name">JasaOprek</span>
+            <span class="brand-tagline">Solusi Firmware &amp; Optimasi Sistem</span>
+          </span>
+        </a>
         <ul>
           <li><a aria-current="page" href="index.html">Beranda</a></li>
           <li><a href="tentang.html">Tentang Kami</a></li>
@@ -22,27 +34,78 @@
     </header>
     <main id="konten" class="page">
       <section class="hero" aria-labelledby="hero-title">
-        <p class="eyebrow">Modifikasi Perangkat &amp; Sistem</p>
-        <h1 id="hero-title">Oprek Android, Flashing Firmware, dan Optimasi OS</h1>
-        <p>JasaOprek dikelola oleh Fakhri Yuhans Nurfawwas untuk menangani modifikasi Android dan optimasi sistem komputer. Melayani pemasangan custom ROM, custom recovery, custom kernel, root via ResukiSU, Magisk, atau APatch, flashing fastboot, unbrick via SP Flash Tool dan QFIL, debloat, serta konfigurasi dual-boot Windows dan Linux.</p>
-        <button id="promoButton" type="button">Lihat promo servis hari ini</button>
-        <img src="assets/images/etalase-oprek.svg" alt="Meja kerja teknisi Fakhri Yuhans berisi laptop terminal dan ponsel mode fastboot" />
+        <div class="hero-content">
+          <p class="eyebrow">Modifikasi Perangkat &amp; Sistem</p>
+          <h1 id="hero-title">JasaOprek Android &amp; PC</h1>
+          <p>Layanan profesional penanganan modifikasi Android, flashing firmware, unbrick, debloat, dan konfigurasi sistem operasi oleh Fakhri Yuhans Nurfawwas.</p>
+          <button id="promoButton" type="button">Lihat promo servis hari ini</button>
+          <img class="hero-image" src="assets/images/ADB.jpeg" alt="Meja kerja teknisi JasaOprek dengan monitor CachyOS Linux dan ponsel Android LG V60 terkoneksi ADB shell" />
+        </div>
       </section>
 
-      <section aria-labelledby="layanan-utama-title">
-        <h2 id="layanan-utama-title">Layanan Utama</h2>
-        <p>Penanganan teknis untuk kebutuhan modifikasi firmware ponsel dan konfigurasi sistem operasi komputer:</p>
-        <ul>
-          <li><strong>Modifikasi Android:</strong> Pemasangan custom ROM (LineageOS, PixelOS, crDroid), custom recovery (TWRP, OrangeFox, PBRP), custom kernel, serta modul root melalui ResukiSU, Magisk, atau APatch.</li>
-          <li><strong>Flashing &amp; Unbrick:</strong> Pemulihan ponsel bootloop atau mati suri lewat fastboot, SP Flash Tool untuk platform MediaTek, dan QFIL untuk platform Qualcomm Snapdragon.</li>
-          <li><strong>Debloat Android &amp; Windows:</strong> Pembersihan aplikasi bawaan yang tidak terpakai, pemangkasan telemetri, serta optimasi efisiensi RAM dan background service.</li>
-          <li><strong>Dual-Boot &amp; Instalasi OS:</strong> Konfigurasi dual-boot Windows 11 IoT Enterprise LTSC dan Linux (seperti CachyOS atau Debian) dengan partisi rapi dan bootloader GRUB yang stabil.</li>
-        </ul>
-      </section>
+      <section aria-labelledby="produk-title">
+        <h2 id="produk-title">Layanan Unggulan Modifikasi Android</h2>
 
-      <section aria-labelledby="keunggulan-title">
-        <h2 id="keunggulan-title">Standar Pengerjaan</h2>
-        <p>Setiap proses mendahulukan keamanan data dan pencadangan partisi vital seperti NVRAM, NVDATA, atau EFS sebelum flashing. Pemilihan ROM, kernel, dan metode root disesuaikan dengan kebutuhan perangkat agar tetap stabil untuk pemakaian harian.</p>
+        <div class="product-list">
+          <img class="hero-image" src="assets/images/Fastboot.jpeg" alt="Eksekusi perintah fastboot flash recovery OrangeFox pada terminal Linux untuk modifikasi Android">
+          <div class="product-cards">
+            <article class="home-product-card">
+              <h3>Custom ROM AOSP</h3>
+              <p>LineageOS, PixelOS, crDroid dengan sistem bersih dan stabil.</p>
+              <p class="price"><a href="produk.html">lihat harga</a></p>
+            </article>
+            <article class="home-product-card">
+              <h3>Custom Recovery</h3>
+              <p>Pemasangan OrangeFox, TWRP, atau PBRP untuk kemudahan flashing.</p>
+              <p class="price"><a href="produk.html">lihat harga</a></p>
+            </article>
+            <article class="home-product-card">
+              <h3>Root Modul Modern</h3>
+              <p>Root via ResukiSU, Magisk, atau APatch dengan Play Integrity lolos.</p>
+              <p class="price"><a href="produk.html">lihat harga</a></p>
+            </article>
+            <article class="home-product-card">
+              <h3>Custom Kernel</h3>
+              <p>Penyetelan kernel kustom untuk efisiensi baterai dan suhu stabil.</p>
+              <p class="price"><a href="produk.html">lihat harga</a></p>
+            </article>
+            <article class="home-product-card">
+              <h3>Debloat Android</h3>
+              <p>Pembersihan aplikasi bawaan vendor via ADB tanpa risiko bootloop.</p>
+              <p class="price"><a href="produk.html">lihat harga</a></p>
+            </article>
+          </div>
+
+          <h2 id="non-coffee-title">Layanan Unggulan Pemulihan &amp; PC</h2>
+          <img class="hero-image" src="assets/images/OptimizeMemoryWindows.jpeg" alt="Hasil optimasi performa dan debloat Windows 11 IoT Enterprise LTSC dengan penggunaan RAM hanya 483 MB">
+          <div class="product-cards">
+            <article class="home-product-card">
+              <h3>Flash Fastboot MTK</h3>
+              <p>Pemulihan perangkat bootloop MediaTek via SP Flash Tool dan Fastboot.</p>
+              <p class="price"><a href="produk.html">lihat harga</a></p>
+            </article>
+            <article class="home-product-card">
+              <h3>Unbrick QFIL EDL</h3>
+              <p>Penanganan ponsel mati suri Qualcomm Snapdragon mode EDL 9008.</p>
+              <p class="price"><a href="produk.html">lihat harga</a></p>
+            </article>
+            <article class="home-product-card">
+              <h3>Debloat Windows</h3>
+              <p>Pembersihan telemetri dan bloatware Windows 10/11 demi RAM lega.</p>
+              <p class="price"><a href="produk.html">lihat harga</a></p>
+            </article>
+            <article class="home-product-card">
+              <h3>Dual-Boot Linux OS</h3>
+              <p>Instalasi Windows 11 LTSC + CachyOS Linux dengan GRUB rapi.</p>
+              <p class="price"><a href="produk.html">lihat harga</a></p>
+            </article>
+            <article class="home-product-card">
+              <h3>Backup NVRAM/EFS</h3>
+              <p>Pencadangan partisi vital jaringan dan IMEI sebelum oprek.</p>
+              <p class="price"><a href="produk.html">lihat harga</a></p>
+            </article>
+          </div>
+        </div>
       </section>
     </main>
     <footer class="site-footer">

@@ -3,15 +3,27 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Kontak Kami - JasaOprek Konsultasi &amp; Servis</title>
+    <title>Kontak JasaOprek - Website UMKM</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
     <script src="js/form.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#konten">Lewati ke konten utama</a>
     <header class="site-header">
       <nav class="nav" aria-label="Navigasi utama">
-        <a class="brand" href="index.html">JasaOprek</a>
+        <a class="brand" href="index.html">
+          <span class="brand-icon">
+            <span class="iconify" data-icon="tabler:device-mobile-cog"></span>
+          </span>
+          <span class="brand-text">
+            <span class="brand-name">JasaOprek</span>
+            <span class="brand-tagline">Solusi Firmware &amp; Optimasi Sistem</span>
+          </span>
+        </a>
         <ul>
           <li><a href="index.html">Beranda</a></li>
           <li><a href="tentang.html">Tentang Kami</a></li>
@@ -21,14 +33,9 @@
         </ul>
       </nav>
     </header>
-
     <main id="konten" class="page">
-      <h1>Kontak Teknisi JasaOprek</h1>
-      <p>Gunakan formulir ini untuk konsultasi kendala perangkat, verifikasi tipe chipset (MediaTek atau Qualcomm), atau pemesanan jasa modifikasi dan instalasi sistem.</p>
-
-      <div class="status-message" role="status">
-        <strong>Status Layanan:</strong> Teknisi aktif menerima antrean oprek dan konsultasi (08.00 - 21.00 WIB). Respon konfirmasi via WhatsApp dalam 1x24 jam.
-      </div>
+      <h1>Kontak JasaOprek</h1>
+      <p>Silakan kirimkan pertanyaan seputar modifikasi Android, penanganan unbrick, flashing firmware, serta optimasi dan instalasi dual-boot sistem operasi PC.</p>
 
       <form id="form-kontak" action="#" method="post">
         <div class="field">
@@ -37,56 +44,92 @@
         </div>
 
         <div class="field">
-          <label for="email">Alamat Email</label>
+          <label for="email">Email</label>
           <input id="email" name="email" type="email" autocomplete="email" required placeholder="nama@domain.com" />
         </div>
 
         <div class="field">
-          <label for="telepon">Nomor WhatsApp / Telepon</label>
-          <input id="telepon" name="telepon" type="tel" autocomplete="tel" required placeholder="Contoh: 081234567890" />
+          <label for="whatsapp">No. whatsapp</label>
+          <input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel" required minlength="10" placeholder="Contoh: 081234567890" />
         </div>
 
         <div class="field">
-          <label for="paket">Paket Layanan yang Diminati</label>
-          <select id="paket" name="paket" required>
-            <option value="">-- Pilih Paket Layanan JasaOprek --</option>
-            <option value="custom-rom">Pasang Custom ROM (LineageOS / PixelOS / crDroid)</option>
-            <option value="custom-recovery">Pasang Custom Recovery &amp; Root (TWRP / OrangeFox / ResukiSU / Magisk / APatch)</option>
-            <option value="custom-kernel">Pasang Custom Kernel &amp; Tuning Performa</option>
-            <option value="flash-bootloop">Flash Fastboot &amp; Unbrick (SP Flash Tool MTK / QFIL Snapdragon)</option>
-            <option value="debloat">Debloat Sistem (Windows atau Android)</option>
-            <option value="dualboot">Konfigurasi Dual-Boot (Windows 11 LTSC IoT + CachyOS / Linux)</option>
+          <label for="tanggal">Tanggal Servis / Konsultasi</label>
+          <input id="tanggal" name="tanggal" type="date" required />
+        </div>
+
+        <div class="field">
+          <label for="waktu">Waktu Pengerjaan / Dihubungi</label>
+          <input id="waktu" name="waktu" type="time" required />
+        </div>
+
+        <fieldset>
+          <legend>Topik pertanyaan</legend>
+
+          <label>
+            <input type="radio" name="topik" value="paket" required />
+            Paket layanan servis
+          </label>
+
+          <label>
+            <input type="radio" name="topik" value="konsultasi" />
+            Konsultasi tipe chipset &amp; ROM
+          </label>
+
+          <label>
+            <input type="radio" name="topik" value="status-servis" />
+            Status pengerjaan perangkat
+          </label>
+
+          <label>
+            <input type="radio" name="topik" value="kerja-sama" />
+            Kerja sama teknis
+          </label>
+        </fieldset>
+
+        <div class="field" id="kategori-saran">
+          <label for="kategori">Kategori Chipset / Perangkat</label>
+          <select id="kategori" name="kategori">
+            <option value="">Pilih kategori perangkat</option>
+            <option value="qualcomm">Qualcomm Snapdragon (Fastboot / EDL 9008)</option>
+            <option value="mediatek">MediaTek (SP Flash Tool / Scatter)</option>
+            <option value="exynos-unisoc">Exynos / Unisoc / Google Tensor</option>
+            <option value="pc-laptop">PC / Laptop (Dual-Boot &amp; Windows/Linux)</option>
           </select>
         </div>
 
-        <fieldset>
-          <legend>Topik Pertanyaan</legend>
-          <label><input type="radio" name="topik" value="konsultasi" required /> Konsultasi kompatibilitas tipe chipset dan ROM</label>
-          <label><input type="radio" name="topik" value="status-servis" /> Cek status pengerjaan perangkat</label>
-          <label><input type="radio" name="topik" value="kerja-sama" /> Kerja sama teknis perangkat</label>
-        </fieldset>
-
-        <fieldset>
-          <legend>Waktu yang Diinginkan untuk Dihubungi</legend>
-          <label><input type="radio" name="waktu" value="pagi" required /> Pagi (08.00 - 12.00 WIB)</label>
-          <label><input type="radio" name="waktu" value="siang" /> Siang (13.00 - 16.00 WIB)</label>
-          <label><input type="radio" name="waktu" value="malam" /> Malam (19.00 - 21.00 WIB)</label>
-        </fieldset>
-
         <div class="field">
-          <label for="pesan">Detail Merk, Tipe Chipset, dan Kendala Perangkat</label>
-          <textarea id="pesan" name="pesan" rows="5" required minlength="10" placeholder="Sebutkan tipe perangkat dan kendala (contoh: Redmi Note 10 Pro Snapdragon, ingin clean flash LineageOS dan root via ResukiSU)..."></textarea>
+          <label for="paket">Paket layanan</label>
+          <select id="paket" name="paket" required>
+            <option value="">Pilih paket</option>
+            <option value="custom-rom">Pasang Custom ROM (LineageOS / PixelOS / crDroid)</option>
+            <option value="custom-recovery">Custom Recovery &amp; Root (TWRP / OrangeFox / Magisk / APatch)</option>
+            <option value="unbrick">Flash Fastboot &amp; Unbrick (MTK / Qualcomm)</option>
+            <option value="debloat">Debloat Sistem (Android &amp; Windows)</option>
+            <option value="dualboot">Dual-Boot OS (Windows 11 LTSC + CachyOS Linux)</option>
+          </select>
         </div>
 
-        <button type="submit">Kirim Permintaan &amp; Tampilkan Preview</button>
+        <div class="field">
+          <label for="pesan">Detail Merk, Tipe, dan Kendala Perangkat</label>
+          <textarea id="pesan" name="pesan" rows="5" required minlength="10" placeholder="Sebutkan detail perangkat dan kebutuhan oprek..."></textarea>
+        </div>
+
+        <button type="submit">Kirim Pesan</button>
       </form>
 
-      <section aria-labelledby="preview-title" class="preview-section">
-        <h2 id="preview-title">Preview Data Permintaan Layanan</h2>
-        <pre id="preview-form" aria-live="polite">Data permintaan servis akan muncul di sini setelah formulir dikirimkan.</pre>
+      <section aria-labelledby="preview-title">
+        <h2 id="preview-title">Preview Data</h2>
+        <pre id="preview-form" aria-live="polite">Data form akan muncul setelah tombol Kirim Pesan diklik</pre>
+      </section>
+
+      <section aria-labelledby="kontak-lanjut">
+        <h2 id="kontak-lanjut">Informasi lainnya</h2>
+        <p>JasaOprek berlokasi di Pekalongan, Jawa Tengah.</p>
+        <p>Jam layanan teknisi: Senin–Sabtu, 08.00–21.00 WIB</p>
+        <p>Hubungi JasaOprek melalui WhatsApp 0812-3456-7890 atau konsultasi langsung di meja servis teknisi Fakhri Yuhans Nurfawwas.</p>
       </section>
     </main>
-
     <footer class="site-footer">
       <p>&copy; 2026 JasaOprek. Portofolio teknis oleh Fakhri Yuhans Nurfawwas untuk kebutuhan praktikum.</p>
     </footer>

@@ -3,14 +3,26 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tentang Kami - JasaOprek Profil Teknisi</title>
+    <title>Tentang JasaOprek - Website UMKM</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#konten">Lewati ke konten utama</a>
     <header class="site-header">
       <nav class="nav" aria-label="Navigasi utama">
-        <a class="brand" href="index.html">JasaOprek</a>
+        <a class="brand" href="index.html">
+          <span class="brand-icon">
+            <span class="iconify" data-icon="tabler:device-mobile-cog"></span>
+          </span>
+          <span class="brand-text">
+            <span class="brand-name">JasaOprek</span>
+            <span class="brand-tagline">Solusi Firmware &amp; Optimasi Sistem</span>
+          </span>
+        </a>
         <ul>
           <li><a href="index.html">Beranda</a></li>
           <li><a aria-current="page" href="tentang.html">Tentang Kami</a></li>
@@ -20,37 +32,39 @@
         </ul>
       </nav>
     </header>
+
     <main id="konten" class="page">
       <section aria-labelledby="tentang-title">
-        <p class="eyebrow">Profil Teknisi</p>
+        <p class="eyebrow">Cerita Usaha</p>
         <h1 id="tentang-title">Tentang JasaOprek</h1>
-        <p>JasaOprek merupakan inisiatif layanan teknis mandiri yang dikelola oleh Fakhri Yuhans Nurfawwas. Layanan ini berfokus pada modifikasi sistem Android, penanganan flashing firmware, unbrick, serta konfigurasi performa sistem operasi PC.</p>
-        <img src="assets/images/etalase-oprek.svg" alt="Meja kerja teknisi Fakhri Yuhans berisi laptop terminal dan ponsel mode fastboot" />
-      </section>
-
-      <section aria-labelledby="cerita-title">
-        <h2 id="cerita-title">Latar Belakang &amp; Pengalaman</h2>
-        <p>Kebutuhan memaksimalkan perangkat secara mandiri menjadi awal mula berdirinya JasaOprek. Ponsel bawaan pabrik sering kali terbebani bloatware dan sistem operasi komputer kerap terhambat telemetri yang memakan sumber daya. Berbekal pengalaman eksplorasi custom ROM, modifikasi kernel, hingga pengelolaan sistem berbasis kernel Linux, setiap pengerjaan diarahkan untuk menghasilkan sistem yang bersih dan efisien tanpa kompromi kestabilan.</p>
-        <p>Pada workstation kerja pribadi, saya menerapkan konfigurasi dual-boot Windows 11 IoT Enterprise LTSC bersama CachyOS (distro Linux berbasis Arch dengan optimasi performa) sebagai sistem operasi harian utama.</p>
+        <p>JasaOprek adalah inisiatif layanan teknis mandiri oleh Fakhri Yuhans Nurfawwas yang berfokus pada modifikasi sistem Android, unbrick firmware, dan konfigurasi multi-boot OS PC.</p>
+        <img class="about-image" src="assets/images/tim.jpeg" alt="Fakhri Yuhans Nurfawwas teknisi dan pendiri JasaOprek" />
       </section>
 
       <section aria-labelledby="nilai-title">
-        <h2 id="nilai-title">Prinsip Pengerjaan</h2>
-        <ul>
-          <li><strong>Pencadangan Partisi Vital:</strong> Partisi penting seperti EFS, NVRAM, dan NVDATA selalu dicadangkan sebelum prosedur flashing untuk mencegah hilangnya sinyal seluler atau kerusakan nomor IMEI.</li>
-          <li><strong>Alat &amp; Metode Tepat Sasaran:</strong> Flashing disesuaikan dengan arsitektur chipset perangkat, baik fastboot untuk partisi standar, SP Flash Tool untuk MediaTek, maupun QFIL mode EDL 9008 untuk Qualcomm Snapdragon.</li>
-          <li><strong>Sistem Ramping &amp; Bebas Bloatware:</strong> Menerapkan clean flash, integrasi modul root modern (ResukiSU, Magisk, atau APatch), serta pembersihan bloatware secara terukur demi responsivitas maksimal.</li>
-        </ul>
-      </section>
+        <h2 id="nilai-title">Nilai yang Kami Bawa</h2>
+        <div class="nilai-grid">
+          <article class="nilai-card">
+            <span class="iconify nilai-icon" data-icon="tabler:shield-check"></span>
+            <h3>Pencadangan Partisi</h3>
+            <p>Partisi vital seperti EFS, NVRAM, dan NVDATA selalu dicadangkan demi keamanan IMEI dan kestabilan sinyal.</p>
+          </article>
 
-      <section aria-labelledby="tim-title">
-        <h2 id="tim-title">Profil Teknisi</h2>
-        <figure class="media-card">
-          <img src="assets/images/tim.jpg" alt="Fakhri Yuhans Nurfawwas di meja kerja servis perangkat" />
-          <figcaption>Fakhri Yuhans Nurfawwas, praktisi modifikasi sistem Android dan teknisi konfigurasi dual-boot OS.</figcaption>
-        </figure>
+          <article class="nilai-card">
+            <span class="iconify nilai-icon" data-icon="tabler:cpu"></span>
+            <h3>Metode Tepat Sasaran</h3>
+            <p>Penanganan disesuaikan chipset perangkat, baik fastboot, SP Flash Tool MTK, maupun QFIL EDL 9008 Qualcomm.</p>
+          </article>
+
+          <article class="nilai-card">
+            <span class="iconify nilai-icon" data-icon="tabler:flame"></span>
+            <h3>Sistem Bersih &amp; Ramping</h3>
+            <p>Menerapkan clean flash, modul root modern, dan debloat menyeluruh demi responsivitas dan daya tahan baterai.</p>
+          </article>
+        </div>
       </section>
     </main>
+
     <footer class="site-footer">
       <p>&copy; 2026 JasaOprek. Portofolio teknis oleh Fakhri Yuhans Nurfawwas untuk kebutuhan praktikum.</p>
     </footer>

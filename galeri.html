@@ -3,14 +3,26 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Galeri &amp; Dokumentasi - JasaOprek Modifikasi Android &amp; PC</title>
+    <title>Galeri JasaOprek - Website UMKM</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#konten">Lewati ke konten utama</a>
     <header class="site-header">
       <nav class="nav" aria-label="Navigasi utama">
-        <a class="brand" href="index.html">JasaOprek</a>
+        <a class="brand" href="index.html">
+          <span class="brand-icon">
+            <span class="iconify" data-icon="tabler:device-mobile-cog"></span>
+          </span>
+          <span class="brand-text">
+            <span class="brand-name">JasaOprek</span>
+            <span class="brand-tagline">Solusi Firmware &amp; Optimasi Sistem</span>
+          </span>
+        </a>
         <ul>
           <li><a href="index.html">Beranda</a></li>
           <li><a href="tentang.html">Tentang Kami</a></li>
@@ -21,49 +33,42 @@
       </nav>
     </header>
     <main id="konten" class="page">
-      <h1>Galeri &amp; Dokumentasi Teknis</h1>
-      <p>Dokumentasi alur pengerjaan modifikasi firmware, antarmuka recovery, serta setup dual-boot sistem operasi di meja kerja teknisi.</p>
-
-      <section aria-labelledby="teknis-title">
-        <h2 id="teknis-title">Dokumentasi Alat Kerja &amp; Flashing</h2>
-        <p>Dokumentasi workstation teknisi, terminal eksekusi fastboot, antarmuka custom recovery untuk backup partisi, dan menu dual-boot sistem.</p>
-        <div class="gallery-list">
+      <h1>Galeri JasaOprek</h1>
+      <section aria-labelledby="media-title">
+        <h2 id="media-title">Media Usaha</h2>
+        <div class="gallery-grid">
           <figure class="media-card">
-            <img src="assets/images/etalase-oprek.svg" alt="Meja kerja teknisi Fakhri Yuhans berisi laptop terminal dan ponsel mode fastboot" />
-            <figcaption>Workstation teknisi yang disiapkan untuk eksekusi fastboot command, SP Flash Tool MTK, dan QFIL Qualcomm.</figcaption>
+            <img src="assets/images/ADB.jpeg" alt="Workstation teknisi JasaOprek dengan terminal ADB CachyOS Linux" />
+            <figcaption>Workstation teknisi dengan terminal CachyOS Linux dan perangkat Android terkoneksi via ADB shell debugging.</figcaption>
           </figure>
           <figure class="media-card">
-            <img src="assets/images/proses-flashing.svg" alt="Terminal Linux mengeksekusi perintah fastboot flash recovery" />
-            <figcaption>Eksekusi perintah flashing via terminal Linux untuk memastikan integritas partisi sistem tanpa galat.</figcaption>
+            <img src="assets/images/Fastboot.jpeg" alt="Proses flashing custom recovery OrangeFox melalui fastboot mode" />
+            <figcaption>Eksekusi perintah fastboot flash recovery OrangeFox via terminal Linux dengan status penulisan partisi sukses.</figcaption>
           </figure>
           <figure class="media-card">
-            <img src="assets/images/custom-recovery.svg" alt="Antarmuka custom recovery OrangeFox dengan tombol Install, Wipe, Backup, dan Restore" />
-            <figcaption>Antarmuka custom recovery OrangeFox untuk pemasangan custom ROM, custom kernel, dan backup partisi NVRAM/EFS.</figcaption>
+            <img src="assets/images/Custom_Recovery_OrangeFox.jpeg" alt="Antarmuka custom recovery OrangeFox pada perangkat Android" />
+            <figcaption>Antarmuka recovery OrangeFox untuk manajemen partisi, dekripsi data internal, dan pencadangan partisi vital.</figcaption>
           </figure>
           <figure class="media-card">
-            <img src="assets/images/dualboot-arch.svg" alt="Menu GRUB bootloader menyatukan CachyOS Linux dan Windows 11 LTSC" />
-            <figcaption>Konfigurasi dual-boot Windows 11 LTSC IoT dan CachyOS (sistem utama) melalui bootloader GRUB.</figcaption>
+            <img src="assets/images/RootwithReSUkiSU.jpeg" alt="Integrasi modul root ReSukiSU dan Shizuku pada Android 16" />
+            <figcaption>Lingkungan root modern menggunakan ReSukiSU v4.2.0 dan Shizuku dengan status SELinux Enforcing pada Android 16.</figcaption>
+          </figure>
+          <figure class="media-card">
+            <img src="assets/images/dualboot.jpeg" alt="Menu bootloader UEFI Limine untuk dual-boot CachyOS Linux dan Windows 11" />
+            <figcaption>Konfigurasi bootloader UEFI Limine untuk dual-boot CachyOS Linux (Kernel 7.2.6) dan Windows Boot Manager.</figcaption>
+          </figure>
+          <figure class="media-card">
+            <img src="assets/images/OptimizeMemoryWindows.jpeg" alt="Hasil debloat dan optimasi memori Windows 11 IoT Enterprise LTSC" />
+            <figcaption>Hasil optimasi sistem Windows 11 IoT Enterprise LTSC 24H2 dengan penggunaan RAM terpangkas hingga 483 MB idle.</figcaption>
           </figure>
         </div>
       </section>
-
-      <section aria-labelledby="tim-title">
-        <h2 id="tim-title">Teknisi di Balik Layar</h2>
-        <p>Fakhri Yuhans Nurfawwas memeriksa integritas firmware, pengujian sensor, audio, dan jaringan seluler secara bertahap sebelum perangkat diserahkan kepada pengguna.</p>
-        <div class="team-gallery-container">
-          <figure class="media-card team-card">
-            <img src="assets/images/tim.jpg" alt="Fakhri Yuhans Nurfawwas di meja kerja servis perangkat" />
-            <figcaption>Fakhri Yuhans Nurfawwas memverifikasi stabilitas custom ROM, modul root (ResukiSU, Magisk, atau APatch), serta performa sistem harian.</figcaption>
-          </figure>
-        </div>
-      </section>
-
       <section aria-labelledby="audio-title">
-        <h2 id="audio-title">Suasana Ruang Kerja</h2>
+        <h2 id="audio-title">Suasana Ruang Kerja JasaOprek</h2>
         <p id="audio-note">Audio latar suasana meja kerja saat proses flashing firmware dan penyesuaian sistem berlangsung.</p>
-        <audio controls aria-describedby="audio-note" src="assets/music/Fainted.mp3">
+        <audio controls>
           <source src="assets/music/Fainted.mp3" type="audio/mpeg">
-          Browser Anda tidak mendukung pemutar audio.
+          Browser kamu tidak mendukung pemutar audio.
         </audio>
       </section>
     </main>

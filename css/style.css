@@ -1,31 +1,27 @@
 :root {
-  --color-primary: #0284c7;
-  --color-primary-strong: #0369a1;
-  --color-accent: #38bdf8;
-  --color-text: #0f172a;
-  --color-muted: #475569;
+  --color-primary: #7b1129;
+  --color-primary-strong: #59091c;
+  --color-text: #241518;
+  --color-muted: #6d5b5e;
   --color-surface: #ffffff;
-  --color-surface-soft: #f8fafc;
-  --color-border: #cbd5e1;
-  --color-focus: #0284c7;
-  --color-highlight: #e0f2fe;
-  --color-highlight-strong: #bae6fd;
-  --color-success: #166534;
-  --color-success-bg: #f0fdf4;
+  --color-surface-soft: #f8f5f0;
+  --color-border: #e6ded6;
+  --color-focus: #7b1129;
+  --color-cerah: #fbe8ea;
 
   --space-1: 0.5rem;
   --space-2: 0.75rem;
   --space-3: 1rem;
   --space-4: 1.5rem;
   --space-5: 2rem;
-  --space-6: 2.5rem;
+  --space-6: 3rem;
 
-  --radius-sm: 0.375rem;
-  --radius-md: 0.625rem;
-  --radius-lg: 1rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.875rem;
+  --radius-lg: 1.25rem;
 
-  --shadow-sm: 0 1px 3px 0 rgb(15 23 42 / 0.05);
-  --shadow-card: 0 4px 16px 0 rgb(15 23 42 / 0.08);
+  --shadow-sm: 0 1px 3px 0 rgb(36 21 24 / 0.05);
+  --shadow-card: 0 4px 18px 0 rgb(36 21 24 / 0.07);
 }
 
 *,
@@ -34,45 +30,40 @@
   box-sizing: border-box;
 }
 
-html {
-  color-scheme: light;
-}
-
 body {
   margin: 0;
   color: var(--color-text);
   background: var(--color-surface-soft);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-family: "DM Sans", Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.6;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+/* Fluid page container without media queries. */
+.page {
+  width: min(100% - 2rem, 60rem);
+  margin-inline: auto;
+  padding-block: var(--space-5);
+  padding-block: var(--space-6);
 }
 
-a {
+.eyebrow {
+  margin: 0 0 var(--space-2);
   color: var(--color-primary);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
 }
 
-a:hover {
-  color: var(--color-primary-strong);
-}
-
-:focus-visible {
-  outline: 3px solid var(--color-focus);
-  outline-offset: 3px;
-}
-
+/* Absolute skip link positioned outside viewport until focused. */
 .skip-link {
   position: absolute;
   top: -5rem;
   left: var(--space-3);
   padding: var(--space-2) var(--space-3);
   color: var(--color-surface);
-  background: var(--color-primary);
+  background: var(--color-text);
   text-decoration: none;
   font-weight: 700;
   border-radius: 0 0 var(--radius-sm) var(--radius-sm);
@@ -80,53 +71,92 @@ a:hover {
 }
 
 .skip-link:focus {
-  top: 0;
+  top: var(--space-3);
 }
 
-/* Header terstruktur dengan perataan horizontal */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
 .site-header {
-  background-color: var(--color-surface);
-  border-bottom: 1px solid var(--color-border);
   padding: var(--space-3) var(--space-4);
-  box-shadow: var(--shadow-sm);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
 }
 
-.nav {
-  max-width: 960px;
-  margin-inline: auto;
-}
-
+/* Brand logo and title lockup. */
 .brand {
-  display: inline-block;
-  vertical-align: middle;
-  font-size: 1.35rem;
+  display: flex;
+  margin-bottom: 0;
+  align-items: center;
   font-weight: 800;
+  gap: var(--space-2);
   color: var(--color-primary);
   text-decoration: none;
-  letter-spacing: -0.02em;
-  margin-right: var(--space-4);
 }
 
-.brand:hover {
-  color: var(--color-primary-strong);
+.brand-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2);
+  color: var(--color-primary);
+  background: var(--color-surface-soft);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 1.6rem;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.brand-name {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.brand-tagline {
+  font-family: "DM Sans", sans-serif;
+  color: var(--color-muted);
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+}
+
+/* Flexbox navigation bar with horizontal main axis. */
+.nav {
+  width: min(100% - 2rem, 60rem);
+  margin-inline: auto;
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .nav ul {
-  display: inline-block;
-  vertical-align: middle;
   padding: 0;
   margin: 0;
   list-style: none;
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
 }
 
 .nav li {
   display: inline-block;
-  margin-right: var(--space-1);
+  margin: 0 var(--space-2) var(--space-1) 0;
 }
 
 .nav a {
-  display: inline-block;
-  color: var(--color-muted);
+  color: var(--color-text);
   text-decoration: none;
   font-weight: 600;
   font-size: 0.95rem;
@@ -138,91 +168,37 @@ a:hover {
 .nav a:hover,
 .nav a:focus {
   color: var(--color-primary);
-  background-color: var(--color-surface-soft);
-  text-decoration: none;
+  background: var(--color-surface-soft);
 }
 
 .nav a[aria-current="page"] {
+  padding: var(--space-1) var(--space-2);
   color: var(--color-primary-strong);
-  background-color: var(--color-highlight);
   font-weight: 700;
   text-decoration: none;
-}
-
-/* Pembatasan lebar kontainer secara fluid tanpa memerlukan media query */
-.page {
-  width: min(100% - 2rem, 60rem);
-  margin-block: var(--space-5);
-  margin-inline: auto;
-  padding-inline: var(--space-3);
-}
-
-h1,
-h2,
-h3 {
-  line-height: 1.25;
-  text-wrap: balance;
-  color: var(--color-text);
-  margin-top: var(--space-4);
-  margin-bottom: var(--space-2);
-}
-
-h1 {
-  font-size: clamp(2rem, 5vw, 2.5rem);
-}
-
-h2 {
-  font-size: clamp(1.35rem, 4vw, 1.75rem);
-}
-
-p,
-li {
-  max-width: 68ch;
-}
-
-.eyebrow {
-  color: var(--color-primary);
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-size: 0.875rem;
-  margin-bottom: var(--space-1);
-}
-
-.button,
-button,
-#promoButton {
-  display: inline-block;
-  padding: var(--space-2) var(--space-4);
-  color: var(--color-surface);
-  font: inherit;
-  font-size: 0.95rem;
-  font-weight: 700;
-  text-decoration: none;
-  cursor: pointer;
-  background: var(--color-primary);
-  border: 0;
+  background: var(--color-cerah);
   border-radius: var(--radius-sm);
-  margin: var(--space-2) 0 var(--space-3);
-  transition: background-color 0.15s ease, transform 0.15s ease;
 }
 
-.button:hover,
-button:hover,
-#promoButton:hover {
-  color: var(--color-surface);
-  background: var(--color-primary-strong);
-}
-
+/* Single-column grid container for hero banner. */
 .hero {
   padding: var(--space-5);
   color: var(--color-surface);
   background: var(--color-primary);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-card);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-4);
+  align-items: center;
+}
+
+.hero-content {
+  min-width: 0;
 }
 
 .hero h1 {
+  margin-top: 0;
+  margin-bottom: var(--space-2);
   color: var(--color-surface);
 }
 
@@ -231,76 +207,332 @@ button:hover,
 }
 
 .hero .eyebrow {
-  color: var(--color-highlight);
+  color: var(--color-cerah);
 }
 
-/* Penanganan specificity pada tombol promo agar kontras terhadap kartu hero */
+.hero-image {
+  display: block;
+  width: 100%;
+  height: 340px;
+  margin-top: var(--space-3);
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  object-position: center 35%;
+  background-color: var(--color-surface-soft);
+  border: 1px solid var(--color-border);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  text-wrap: balance;
+  color: var(--color-text);
+}
+
+h2 {
+  text-align: center;
+  margin-block: var(--space-5);
+}
+
+h3 {
+  margin-top: 0;
+}
+
+button {
+  display: inline-block;
+  padding: var(--space-2) var(--space-3);
+  color: var(--color-surface);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  background: var(--color-primary);
+  border: 0;
+  border-radius: var(--radius-sm);
+  transition: background-color 0.15s ease;
+}
+
+button:hover {
+  background: var(--color-primary-strong);
+}
+
 .hero button,
 .hero #promoButton {
   color: var(--color-primary-strong);
-  background-color: var(--color-surface);
-  border: none;
-  font-weight: 700;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  background: var(--color-surface);
 }
 
 .hero button:hover,
 .hero #promoButton:hover {
+  background: var(--color-cerah);
   color: var(--color-primary-strong);
-  background-color: var(--color-highlight);
-  transform: translateY(-1px);
 }
 
-.hero img {
-  margin-top: var(--space-4);
-  border-radius: var(--radius-md);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Susunan grid kartu galeri dokumentasi teknis sesuai saran dosen */
-.gallery-list {
+/* Grid layout for showcase product list and section headers. */
+.product-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: var(--space-4);
-  margin-top: var(--space-3);
-  margin-bottom: var(--space-5);
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
 }
 
-.product-card,
-.media-card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: var(--space-3);
-  box-shadow: var(--shadow-sm);
+.product-list > h2 {
+  grid-column: 1 / -1;
   margin: 0;
+  text-align: center;
+}
+
+.product-list > .hero-image {
+  display: block;
+  width: 100%;
+  height: 320px;
+  min-height: 0;
+  margin: 0;
+  object-fit: cover;
+  object-position: center 35%;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+}
+
+/* 5-column grid distributing highlight cards across width. */
+.home-product-cards,
+.product-cards {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  align-items: stretch;
+  width: 100%;
+}
+
+.home-product-card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+  min-width: 0;
+  padding: 14px 12px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  text-align: center;
+  overflow-wrap: anywhere;
+  box-sizing: border-box;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.gallery-list .media-card:hover,
-.team-card:hover {
+.home-product-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0.75rem 2rem rgb(15 23 42 / 0.12);
+  box-shadow: var(--shadow-card);
 }
 
-.media-card img {
+.home-product-card h3 {
   width: 100%;
-  height: auto;
-  display: block;
-  border-radius: var(--radius-sm);
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  background-color: var(--color-text);
+  min-height: 42px;
+  margin: 0 0 12px;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--color-primary);
 }
 
-.media-card figcaption {
-  margin-top: var(--space-2);
-  font-size: 0.95rem;
-  color: var(--color-muted);
+.home-product-card p {
+  margin: 8px 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.home-product-card .price {
+  margin-top: auto;
+  padding-top: 8px;
+  font-weight: 700;
+}
+
+.home-product-card .price a {
+  display: inline-block;
+  padding: 9px 12px;
+  border: 1px solid var(--color-focus);
+  border-radius: 9px;
+  color: var(--color-focus);
+  text-decoration: none;
+  font-weight: 400;
+  white-space: nowrap;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.home-product-card .price a:hover {
+  background-color: var(--color-primary);
+  color: #fff;
+  text-decoration: none;
+}
+
+.price {
+  font-weight: 700;
+}
+
+.price a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.price a:hover {
+  color: var(--color-primary-strong);
+  text-decoration: underline;
+}
+
+.site-footer {
+  margin-top: var(--space-5);
+  padding: var(--space-3) var(--space-4);
+  color: var(--color-surface);
+  text-align: center;
+  background: var(--color-text);
+  border-top: 1px solid var(--color-border);
+}
+
+.site-footer p {
+  margin: 0 auto;
   line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 2-column grid displaying media evidence figures. */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+  align-items: center;
+}
+
+figure {
+  margin: 0 0 var(--space-4);
+}
+
+figure img {
+  display: block;
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  object-position: center 35%;
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+figcaption {
+  margin-top: var(--space-2);
+  color: var(--color-muted);
+}
+
+#audio-title {
+  color: var(--color-primary);
+  text-align: center;
+}
+
+#audio-note {
+  max-width: 700px;
+  margin: 0 auto var(--space-3);
+  color: var(--color-muted);
+  text-align: center;
+}
+
+audio {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* 3-column grid for primary catalog items. */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin-block: var(--space-4);
+}
+
+/* Containing block for absolute badge element. */
+.product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+/* Positioned badge pinned to top-right corner. */
+.product-badge {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  padding: 2px 7px;
+  color: var(--color-surface);
+  background: var(--color-primary);
+  border: 1px solid var(--color-primary-strong);
+  border-radius: var(--radius-sm);
+  font-size: 0.725rem;
+  font-weight: 700;
+}
+
+.product-card h3 {
+  margin-top: var(--space-5);
+  margin-bottom: var(--space-3);
+  color: var(--color-primary);
+  text-align: left;
+}
+
+.product-card p {
+  margin-top: 0;
+  margin-bottom: var(--space-3);
+  text-align: left;
+}
+
+.product-card .priceProduk,
+.product-card .priceProdukProduk {
+  margin-top: auto;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* Horizontal flex group for action buttons (Nested Flexbox di dalam Grid Card). */
+.card-actions {
+  display: flex;
+  flex-direction: row;         /* Main axis: horizontal */
+  align-items: flex-start;     /* Cross axis: vertikal */
+  gap: var(--space-2);         /* Spacing 0.75rem */
+  margin-top: var(--space-2);
+}
+
+.card-actions a {
+  display: inline-block;
+  padding: var(--space-2);
+  color: var(--color-primary);
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.card-actions .button {
+  color: var(--color-surface);
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.card-actions .button:hover {
+  background: var(--color-primary-strong);
+}
+
+.card-actions a:not(.button):hover {
+  color: var(--color-surface);
+  background: var(--color-primary);
 }
 
 figure {
@@ -312,223 +544,172 @@ caption {
   color: var(--color-muted);
 }
 
-.team-gallery-container {
-  margin-top: var(--space-3);
-  margin-bottom: var(--space-5);
-}
-
-.team-card {
-  max-width: 440px;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: var(--space-3);
-  box-shadow: var(--shadow-sm);
-}
-
-.team-card img {
-  width: 100%;
-  max-height: 480px;
-  aspect-ratio: auto;
-  border-radius: var(--radius-sm);
-  display: block;
-}
-
-audio {
-  width: 100%;
-  max-width: 480px;
-  margin-top: var(--space-2);
-  display: block;
-}
-
 table {
   width: 100%;
   border-collapse: collapse;
   margin-block: var(--space-4);
   background: var(--color-surface);
   border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-sm);
   overflow: hidden;
 }
 
 caption {
   margin-bottom: var(--space-2);
+  color: var(--color-primary);
   font-weight: 700;
   text-align: left;
-  color: var(--color-text);
-  font-size: 1.1rem;
 }
 
 th,
 td {
-  padding: var(--space-2) var(--space-3);
+  padding: var(--space-2);
   text-align: left;
   border: 1px solid var(--color-border);
 }
 
 th {
-  background: var(--color-surface-soft);
   color: var(--color-text);
-  font-weight: 700;
+  background: var(--color-surface-soft);
 }
 
-tbody tr:nth-child(even) td {
-  background-color: var(--color-surface-soft);
-}
-
-/* Formulir pemesanan terpusat */
-form {
-  max-width: 680px;
-  margin-block: var(--space-4);
-  margin-inline: auto;
-  padding: var(--space-5);
-  background-color: var(--color-surface);
+.about-image {
+  display: block;
+  width: 100%;
+  max-width: 440px;
+  height: 380px;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: var(--radius-md);
+  margin: var(--space-4) auto 0;
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
   box-shadow: var(--shadow-card);
 }
 
-.field {
-  margin-bottom: var(--space-4);
+/* 3-column grid for company core values. */
+.nilai-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin-block: var(--space-4);
 }
 
-.field label {
-  display: block;
-  margin-bottom: var(--space-1);
-  font-weight: 600;
-  font-size: 0.925rem;
-  color: var(--color-text);
-}
-
-.field input,
-.field select,
-.field textarea {
-  width: 100%;
-  padding: 0.6875rem 0.875rem;
-  color: var(--color-text);
-  font: inherit;
-  font-size: 0.95rem;
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  display: block;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
-}
-
-.field input:focus-visible,
-.field select:focus-visible,
-.field textarea:focus-visible {
-  border-color: var(--color-primary);
-  outline: 3px solid var(--color-focus);
-  outline-offset: 2px;
-}
-
-fieldset {
-  margin: 0 0 var(--space-4) 0;
-  padding: var(--space-3) var(--space-4);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  background-color: var(--color-surface-soft);
-}
-
-fieldset legend {
-  font-weight: 700;
-  font-size: 0.9rem;
-  padding: 0 var(--space-1);
-  color: var(--color-primary-strong);
-}
-
-fieldset label {
-  display: block;
-  margin-bottom: var(--space-2);
-  font-weight: 400;
-  font-size: 0.95rem;
-  cursor: pointer;
-  color: var(--color-text);
-}
-
-fieldset label:last-child {
-  margin-bottom: 0;
-}
-
-/* Pengendalian ukuran kontrol pilihan agar tidak melebar */
-input[type="radio"],
-input[type="checkbox"] {
-  display: inline-block;
-  vertical-align: middle;
-  width: 1.15rem;
-  height: 1.15rem;
-  margin: 0 var(--space-2) 0 0;
-  accent-color: var(--color-primary);
-  cursor: pointer;
-}
-
-button[type="submit"] {
-  display: block;
-  width: 100%;
-  background-color: var(--color-primary);
-  color: var(--color-surface);
-  padding: 0.85rem var(--space-4);
-  font-size: 1rem;
-  font-weight: 700;
-  border: none;
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-  margin-top: var(--space-2);
-  transition: background-color 0.15s ease, transform 0.15s ease;
-}
-
-button[type="submit"]:hover {
-  background-color: var(--color-primary-strong);
-}
-
-.preview-section {
-  max-width: 680px;
-  margin-top: var(--space-5);
-  margin-inline: auto;
-}
-
-.preview-section h2 {
-  font-size: 1.25rem;
-  margin-bottom: var(--space-2);
-}
-
-#preview-form {
+.nilai-card {
   padding: var(--space-4);
-  white-space: pre-wrap;
-  background-color: var(--color-surface);
-  color: var(--color-text);
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.925rem;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+}
+
+.nilai-card h3 {
+  margin-top: 0;
+  color: var(--color-primary);
+}
+
+.nilai-card p {
+  margin-bottom: 0;
   line-height: 1.6;
 }
 
-/* Footer terpusat */
-.site-footer {
-  background-color: var(--color-surface);
-  border-top: 1px solid var(--color-border);
-  padding: var(--space-5) var(--space-4);
-  margin-top: var(--space-6);
+.nilai-icon {
+  font-size: 36px;
+  color: var(--color-primary);
+  margin-bottom: var(--space-3);
+}
+
+#konten > h1 {
   text-align: center;
-  color: var(--color-muted);
-  font-size: 0.9rem;
 }
 
-.site-footer p {
-  margin: 0 auto;
-  max-width: none;
-  line-height: 1.5;
+#konten > p {
+  max-width: 700px;
+  margin: var(--space-3) auto;
+  line-height: 1.6;
 }
 
-.status-message {
-  margin-block: var(--space-3);
-  padding: var(--space-2) var(--space-3);
-  color: var(--color-success);
-  background: var(--color-success-bg);
-  border: 1px solid currentColor;
+#form-kontak {
+  max-width: 700px;
+  margin: var(--space-4) auto;
+  padding: var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+#form-kontak .field {
+  margin-bottom: var(--space-3);
+}
+
+#form-kontak label {
+  display: block;
+  margin-bottom: var(--space-1);
+}
+
+#form-kontak input[type="text"],
+#form-kontak input[type="email"],
+#form-kontak input[type="tel"],
+#form-kontak input[type="date"],
+#form-kontak input[type="time"],
+#form-kontak select,
+#form-kontak textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: var(--space-2);
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
-  font-weight: 600;
+  font: inherit;
+}
+
+#form-kontak fieldset {
+  margin: 0 0 var(--space-3);
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+#form-kontak fieldset label {
+  margin-top: var(--space-2);
+}
+
+#form-kontak input[type="radio"] {
+  margin-right: var(--space-1);
+}
+
+#form-kontak button {
+  display: inline-block;
+  padding: var(--space-2) var(--space-3);
+  color: var(--color-surface);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  background: var(--color-primary);
+  border: 0;
+  border-radius: var(--radius-sm);
+}
+
+#form-kontak button:hover {
+  color: var(--color-surface);
+  background: var(--color-primary-strong);
+}
+
+#preview-form {
+  max-width: 700px;
+  margin: var(--space-3) auto;
+  padding: var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  white-space: pre-wrap;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+#kontak-lanjut {
+  max-width: 700px;
+  margin: var(--space-4) auto;
+  text-align: center;
 }

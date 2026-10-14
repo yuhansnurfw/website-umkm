@@ -3,14 +3,26 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Layanan &amp; Tarif - JasaOprek Modifikasi Android &amp; PC</title>
+    <title>Layanan JasaOprek - Website UMKM</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#konten">Lewati ke konten utama</a>
     <header class="site-header">
       <nav class="nav" aria-label="Navigasi utama">
-        <a class="brand" href="index.html">JasaOprek</a>
+        <a class="brand" href="index.html">
+          <span class="brand-icon">
+            <span class="iconify" data-icon="tabler:device-mobile-cog"></span>
+          </span>
+          <span class="brand-text">
+            <span class="brand-name">JasaOprek</span>
+            <span class="brand-tagline">Solusi Firmware &amp; Optimasi Sistem</span>
+          </span>
+        </a>
         <ul>
           <li><a href="index.html">Beranda</a></li>
           <li><a href="tentang.html">Tentang Kami</a></li>
@@ -21,23 +33,54 @@
       </nav>
     </header>
     <main id="konten" class="page">
-      <h1>Katalog Layanan JasaOprek</h1>
-      <p>Daftar paket jasa modifikasi firmware Android, pemulihan perangkat, debloat sistem, dan konfigurasi multi-boot PC.</p>
+      <h1>Layanan JasaOprek Android &amp; PC</h1>
+      <p>Pilih paket layanan modifikasi firmware dan optimasi sistem sesuai kebutuhan perangkat Anda.</p>
+      <img class="hero-image" src="assets/images/Custom_Recovery_OrangeFox.jpeg" alt="Antarmuka custom recovery OrangeFox pada perangkat Android teknisi untuk instalasi custom ROM">
+      <figcaption>Daftar penanganan modifikasi sistem Android dan komputer bergaransi dengan pencadangan partisi vital.</figcaption>
 
-      <section aria-labelledby="kategori-title">
-        <h2 id="kategori-title">Kategori Layanan</h2>
-        <ul>
-          <li><strong>Modifikasi Android:</strong> Pemasangan custom ROM, custom recovery, custom kernel, serta modul root (ResukiSU, Magisk, atau APatch).</li>
-          <li><strong>Flashing &amp; Unbrick:</strong> Pemulihan bootloop melalui Fastboot, SP Flash Tool untuk MediaTek, dan QFIL mode EDL untuk Qualcomm Snapdragon.</li>
-          <li><strong>Debloat Sistem:</strong> Pembersihan bloatware Android via ADB atau root, serta pemangkasan telemetri dan layanan latar pada Windows.</li>
-          <li><strong>Dual-Boot &amp; Linux:</strong> Pemasangan dan konfigurasi dual-boot Windows 11 IoT Enterprise LTSC dan Linux (CachyOS atau Debian) dengan bootloader terintegrasi.</li>
-        </ul>
+      <section aria-labelledby="produk-pilihan-title">
+        <h2 id="produk-pilihan-title">Layanan Pilihan</h2>
+
+        <div class="product-grid">
+          <article class="product-card">
+            <span class="product-badge">Terlaris</span>
+            <h3>Pasang Custom ROM</h3>
+            <p>Clean flash ROM AOSP (LineageOS, PixelOS, crDroid) bersih, stabil, dan lolos verifikasi Play Integrity.</p>
+            <p class="priceProduk">Rp75.000</p>
+            <div class="card-actions">
+              <a class="button" href="kontak.html">Tanya layanan</a>
+              <a href="#harga-title">Lihat tarif</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <span class="product-badge">Rekomendasi</span>
+            <h3>Recovery &amp; Root</h3>
+            <p>Pemasangan OrangeFox atau TWRP serta integrasi modul root modern via ResukiSU, Magisk, atau APatch.</p>
+            <p class="priceProduk">Rp50.000</p>
+            <div class="card-actions">
+              <a class="button" href="kontak.html">Tanya layanan</a>
+              <a href="#harga-title">Lihat tarif</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <span class="product-badge">Spesialis</span>
+            <h3>Unbrick QFIL EDL 9008</h3>
+            <p>Pemulihan ponsel mati suri atau hardbrick mode darurat 9008 untuk chipset Qualcomm Snapdragon.</p>
+            <p class="priceProduk">Rp75.000</p>
+            <div class="card-actions">
+              <a class="button" href="kontak.html">Tanya layanan</a>
+              <a href="#harga-pc-title">Lihat tarif</a>
+            </div>
+          </article>
+        </div>
       </section>
 
       <section aria-labelledby="harga-title">
-        <h2 id="harga-title">Daftar Tarif Layanan</h2>
+        <h2 id="harga-title">Kategori Modifikasi Firmware Android</h2>
         <table>
-          <caption>Daftar tarif jasa modifikasi Android dan optimasi sistem PC</caption>
+          <caption>Daftar tarif jasa modifikasi firmware dan sistem Android</caption>
           <thead>
             <tr>
               <th scope="col">Jenis Layanan</th>
@@ -58,7 +101,7 @@
             </tr>
             <tr>
               <th scope="row">Pasang Custom Kernel</th>
-              <td>Flash kernel kustom untuk efisiensi daya, suhu, atau performa</td>
+              <td>Flash kernel kustom untuk efisiensi daya, suhu, dan stabilitas</td>
               <td>Rp45.000</td>
             </tr>
             <tr>
@@ -67,29 +110,50 @@
               <td>Rp60.000</td>
             </tr>
             <tr>
+              <th scope="row">Debloat Android Vendor</th>
+              <td>Pembersihan bloatware vendor (Xiaomi/Samsung/Oppo/Realme) via ADB</td>
+              <td>Rp35.000</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section aria-labelledby="harga-pc-title">
+        <h2 id="harga-pc-title">Kategori Pemulihan Darurat &amp; Sistem PC</h2>
+        <table>
+          <caption>Daftar tarif pemulihan hardware unbrick dan konfigurasi sistem operasi PC</caption>
+          <thead>
+            <tr>
+              <th scope="col">Jenis Layanan</th>
+              <th scope="col">Kategori / Spesifikasi</th>
+              <th scope="col">Tarif Jasa</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
               <th scope="row">Unbrick SP Flash Tool (MTK)</th>
-              <td>Flashing scatter firmware untuk perangkat berchipset MediaTek</td>
+              <td>Flashing scatter firmware untuk chipset MediaTek</td>
               <td>Rp65.000</td>
             </tr>
             <tr>
               <th scope="row">Unbrick QFIL (Snapdragon)</th>
-              <td>Flashing mode EDL 9008 untuk perangkat berchipset Qualcomm</td>
+              <td>Flashing mode EDL 9008 untuk chipset Qualcomm Snapdragon</td>
               <td>Rp75.000</td>
             </tr>
             <tr>
-              <th scope="row">Debloat Android</th>
-              <td>Pembersihan bloatware vendor (Xiaomi/Samsung/Oppo/Realme) via ADB</td>
-              <td>Rp35.000</td>
-            </tr>
-            <tr>
-              <th scope="row">Debloat Windows</th>
-              <td>Windows 10/11: Pembersihan telemetri, bloatware, dan optimasi RAM</td>
+              <th scope="row">Debloat Windows 10/11</th>
+              <td>Pembersihan telemetri, bloatware, dan optimasi RAM latar belakang</td>
               <td>Rp45.000</td>
             </tr>
             <tr>
               <th scope="row">Dual-Boot Windows + Linux</th>
               <td>Windows 11 LTSC + CachyOS/Debian dengan partisi EFI dan GRUB rapi</td>
               <td>Rp90.000</td>
+            </tr>
+            <tr>
+              <th scope="row">Backup &amp; Restore EFS / NVRAM</th>
+              <td>Pencadangan partisi vital jaringan radio dan nomor IMEI perangkat</td>
+              <td>Rp35.000</td>
             </tr>
           </tbody>
         </table>
