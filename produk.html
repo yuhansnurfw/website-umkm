@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Layanan & Tarif - JasaOprek Katalog Oprek Android & PC</title>
+    <title>Layanan &amp; Tarif - JasaOprek Modifikasi Android &amp; PC</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -22,22 +22,22 @@
     </header>
     <main id="konten" class="page">
       <h1>Katalog Layanan JasaOprek</h1>
-      <p>Pilih paket layanan modifikasi firmware, perbaikan sistem ponsel, atau instalasi sistem operasi PC sesuai kebutuhan Anda.</p>
+      <p>Daftar paket jasa modifikasi firmware Android, pemulihan perangkat, debloat sistem, dan konfigurasi multi-boot PC.</p>
 
       <section aria-labelledby="kategori-title">
         <h2 id="kategori-title">Kategori Layanan</h2>
         <ul>
-          <li><strong>Modifikasi Android:</strong> Pemasangan Custom ROM bebas iklan dan instalasi Custom Recovery modern.</li>
-          <li><strong>Optimasi Windows:</strong> Pembersihan bloatware sistem, tuning latency, dan konfigurasi performa kerja/gaming.</li>
-          <li><strong>Sistem Operasi Open-Source:</strong> Instalasi distro Linux murni untuk kebutuhan programming dan server harian.</li>
-          <li><strong>Emergency Recovery:</strong> Penanganan ponsel mati total, bootloop, unbrick, dan pemulihan kunci perangkat sah.</li>
+          <li><strong>Modifikasi Android:</strong> Pemasangan custom ROM, custom recovery, custom kernel, serta modul root (ResukiSU, Magisk, atau APatch).</li>
+          <li><strong>Flashing &amp; Unbrick:</strong> Pemulihan bootloop melalui Fastboot, SP Flash Tool untuk MediaTek, dan QFIL mode EDL untuk Qualcomm Snapdragon.</li>
+          <li><strong>Debloat Sistem:</strong> Pembersihan bloatware Android via ADB atau root, serta pemangkasan telemetri dan layanan latar pada Windows.</li>
+          <li><strong>Dual-Boot &amp; Linux:</strong> Pemasangan dan konfigurasi dual-boot Windows 11 IoT Enterprise LTSC dan Linux (CachyOS atau Debian) dengan bootloader terintegrasi.</li>
         </ul>
       </section>
 
       <section aria-labelledby="harga-title">
         <h2 id="harga-title">Daftar Tarif Layanan</h2>
         <table>
-          <caption>Daftar tarif layanan oprek dan instalasi sistem</caption>
+          <caption>Daftar tarif jasa modifikasi Android dan optimasi sistem PC</caption>
           <thead>
             <tr>
               <th scope="col">Jenis Layanan</th>
@@ -48,42 +48,47 @@
           <tbody>
             <tr>
               <th scope="row">Pasang Custom ROM</th>
-              <td>LineageOS, PixelOS, crDroid (Clean Flash)</td>
+              <td>LineageOS, PixelOS, crDroid (Clean Flash &amp; Setup AOSP)</td>
               <td>Rp75.000</td>
             </tr>
             <tr>
-              <th scope="row">Pasang Custom Recovery</th>
-              <td>TWRP, OrangeFox, PBRP (Dukungan Decryption)</td>
+              <th scope="row">Custom Recovery &amp; Root</th>
+              <td>TWRP, OrangeFox, PBRP + Root via ResukiSU, Magisk, atau APatch</td>
               <td>Rp50.000</td>
             </tr>
             <tr>
-              <th scope="row">Flash Ulang HP Bootloop</th>
-              <td>Restore Stock ROM / Unbrick Qualcomm &amp; MediaTek</td>
-              <td>Rp60.000</td>
-            </tr>
-            <tr>
-              <th scope="row">Tweak &amp; Debloat Windows</th>
-              <td>Hapus Telemetri, Disable Service Sampah, Optimasi RAM</td>
+              <th scope="row">Pasang Custom Kernel</th>
+              <td>Flash kernel kustom untuk efisiensi daya, suhu, atau performa</td>
               <td>Rp45.000</td>
             </tr>
             <tr>
-              <th scope="row">Install Ulang Windows</th>
-              <td>Windows 10 / 11 Clean Install + Driver Lengkap</td>
-              <td>Rp50.000</td>
+              <th scope="row">Flash Fastboot &amp; Bootloop</th>
+              <td>Pemulihan stock firmware dan perbaikan sistem hang bootloop</td>
+              <td>Rp60.000</td>
             </tr>
             <tr>
-              <th scope="row">Install Ulang Linux</th>
-              <td>Debian 12 / Arch Linux + Desktop Environment</td>
+              <th scope="row">Unbrick SP Flash Tool (MTK)</th>
+              <td>Flashing scatter firmware untuk perangkat berchipset MediaTek</td>
               <td>Rp65.000</td>
             </tr>
             <tr>
-              <th scope="row">Bypass Lock / Akun</th>
-              <td>Reset Kunci Layar / FRP dengan Syarat Bukti Kepemilikan</td>
-              <td>Rp80.000</td>
+              <th scope="row">Unbrick QFIL (Snapdragon)</th>
+              <td>Flashing mode EDL 9008 untuk perangkat berchipset Qualcomm</td>
+              <td>Rp75.000</td>
             </tr>
             <tr>
-              <th scope="row">Dual-Boot Windows + Arch</th>
-              <td>Partisi Khusus, Konfigurasi GRUB &amp; Kernel Zen</td>
+              <th scope="row">Debloat Android</th>
+              <td>Pembersihan bloatware vendor (Xiaomi/Samsung/Oppo/Realme) via ADB</td>
+              <td>Rp35.000</td>
+            </tr>
+            <tr>
+              <th scope="row">Debloat Windows</th>
+              <td>Windows 10/11: Pembersihan telemetri, bloatware, dan optimasi RAM</td>
+              <td>Rp45.000</td>
+            </tr>
+            <tr>
+              <th scope="row">Dual-Boot Windows + Linux</th>
+              <td>Windows 11 LTSC + CachyOS/Debian dengan partisi EFI dan GRUB rapi</td>
               <td>Rp90.000</td>
             </tr>
           </tbody>
@@ -91,7 +96,7 @@
       </section>
     </main>
     <footer class="site-footer">
-      <p>&copy; 2026 JasaOprek. Data dan layanan pada halaman ini disusun untuk kebutuhan praktikum.</p>
+      <p>&copy; 2026 JasaOprek. Portofolio teknis oleh Fakhri Yuhans Nurfawwas untuk kebutuhan praktikum.</p>
     </footer>
     <script src="js/script.js"></script>
   </body>
