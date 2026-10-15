@@ -30,7 +30,14 @@
   box-sizing: border-box;
 }
 
+html {
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
 body {
+  width: 100%;
+  max-width: 100%;
   margin: 0;
   color: var(--color-text);
   background: var(--color-surface-soft);
@@ -39,12 +46,33 @@ body {
   line-height: 1.6;
 }
 
-/* Fluid page container without media queries. */
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+img,
+video {
+  height: auto;
+}
+
+input,
+select,
+textarea,
+button {
+  max-width: 100%;
+}
+
+pre,
+code {
+  overflow-wrap: anywhere;
+}
+
 .page {
   width: min(100% - 2rem, 60rem);
   margin-inline: auto;
-  padding-block: var(--space-5);
-  padding-block: var(--space-6);
+  padding-block: clamp(var(--space-4), 4vw, var(--space-6));
 }
 
 .eyebrow {
@@ -130,15 +158,13 @@ button:focus-visible {
   letter-spacing: 1px;
 }
 
-/* Flexbox navigation bar with horizontal main axis. */
 .nav {
   width: min(100% - 2rem, 60rem);
   margin-inline: auto;
   display: flex;
+  flex-direction: column;
   gap: var(--space-3);
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .nav ul {
@@ -146,13 +172,15 @@ button:focus-visible {
   margin: 0;
   list-style: none;
   display: flex;
+  flex-direction: column;
   gap: var(--space-2);
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .nav li {
-  display: inline-block;
-  margin: 0 var(--space-2) var(--space-1) 0;
+  display: block;
+  margin: 0;
 }
 
 .nav a {
@@ -180,14 +208,13 @@ button:focus-visible {
   border-radius: var(--radius-sm);
 }
 
-/* Single-column grid container for hero banner. */
 .hero {
   padding: var(--space-5);
   color: var(--color-surface);
   background: var(--color-primary);
   border-radius: var(--radius-lg);
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
+  grid-template-columns: 1fr;
   gap: var(--space-4);
   align-items: center;
 }
@@ -213,8 +240,7 @@ button:focus-visible {
 .hero-image {
   display: block;
   width: 100%;
-  height: 340px;
-  margin-top: var(--space-3);
+  height: auto;
   border-radius: var(--radius-md);
   object-fit: cover;
   object-position: center 35%;
@@ -228,6 +254,10 @@ h3 {
   line-height: 1.2;
   text-wrap: balance;
   color: var(--color-text);
+}
+
+h1 {
+  font-size: clamp(1.85rem, 5vw, 2.75rem);
 }
 
 h2 {
@@ -285,7 +315,7 @@ button:hover {
 .product-list > .hero-image {
   display: block;
   width: 100%;
-  height: 320px;
+  height: auto;
   min-height: 0;
   margin: 0;
   object-fit: cover;
@@ -294,11 +324,10 @@ button:hover {
   border: 1px solid var(--color-border);
 }
 
-/* 5-column grid distributing highlight cards across width. */
 .home-product-cards,
 .product-cards {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 12px;
   align-items: stretch;
   width: 100%;
@@ -396,10 +425,9 @@ img {
   height: auto;
 }
 
-/* 2-column grid displaying media evidence figures. */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: var(--space-4);
   align-items: center;
 }
@@ -411,7 +439,7 @@ figure {
 figure img {
   display: block;
   width: 100%;
-  height: 320px;
+  height: auto;
   object-fit: cover;
   object-position: center 35%;
   border-radius: var(--radius-md);
@@ -443,10 +471,9 @@ audio {
   margin: 0 auto;
 }
 
-/* 3-column grid for primary catalog items. */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: var(--space-3);
   margin-block: var(--space-4);
 }
@@ -498,13 +525,13 @@ audio {
   font-weight: 700;
 }
 
-/* Horizontal flex group for action buttons (Nested Flexbox di dalam Grid Card). */
 .card-actions {
   display: flex;
-  flex-direction: row;         /* Main axis: horizontal */
-  align-items: flex-start;     /* Cross axis: vertikal */
-  gap: var(--space-2);         /* Spacing 0.75rem */
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--space-2);
   margin-top: var(--space-2);
+  flex-wrap: wrap;
 }
 
 .card-actions a {
@@ -544,6 +571,22 @@ caption {
   color: var(--color-muted);
 }
 
+.table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  margin-block: var(--space-4);
+}
+
+.table-scroll:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+.table-scroll table {
+  min-width: 40rem;
+  margin-block: 0;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -576,7 +619,7 @@ th {
   display: block;
   width: 100%;
   max-width: 440px;
-  height: 380px;
+  height: auto;
   object-fit: cover;
   object-position: center 20%;
   border-radius: var(--radius-md);
@@ -585,10 +628,9 @@ th {
   box-shadow: var(--shadow-card);
 }
 
-/* 3-column grid for company core values. */
 .nilai-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: var(--space-3);
   margin-block: var(--space-4);
 }
@@ -713,3 +755,50 @@ th {
   margin: var(--space-4) auto;
   text-align: center;
 }
+
+@media (min-width: 42rem) {
+  .nav ul {
+    flex-direction: row;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-product-cards,
+  .product-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 48rem) {
+  .hero {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nilai-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 60rem) {
+  .nav {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .home-product-cards,
+  .product-cards {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+

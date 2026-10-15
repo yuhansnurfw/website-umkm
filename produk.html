@@ -35,8 +35,10 @@
     <main id="konten" class="page">
       <h1>Layanan JasaOprek Android &amp; PC</h1>
       <p>Pilih paket layanan modifikasi firmware dan optimasi sistem sesuai kebutuhan perangkat Anda.</p>
-      <img class="hero-image" src="assets/images/Custom_Recovery_OrangeFox.jpeg" alt="Antarmuka custom recovery OrangeFox pada perangkat Android teknisi untuk instalasi custom ROM">
-      <figcaption>Daftar penanganan modifikasi sistem Android dan komputer bergaransi dengan pencadangan partisi vital.</figcaption>
+      <figure class="hero-figure">
+        <img class="hero-image" src="assets/images/Custom_Recovery_OrangeFox.jpeg" width="1280" height="960" loading="lazy" alt="Antarmuka custom recovery OrangeFox pada perangkat Android teknisi untuk instalasi custom ROM">
+        <figcaption>Daftar penanganan modifikasi sistem Android dan komputer bergaransi dengan pencadangan partisi vital.</figcaption>
+      </figure>
 
       <section aria-labelledby="produk-pilihan-title">
         <h2 id="produk-pilihan-title">Layanan Pilihan</h2>
@@ -79,84 +81,88 @@
 
       <section aria-labelledby="harga-title">
         <h2 id="harga-title">Kategori Modifikasi Firmware Android</h2>
-        <table>
-          <caption>Daftar tarif jasa modifikasi firmware dan sistem Android</caption>
-          <thead>
-            <tr>
-              <th scope="col">Jenis Layanan</th>
-              <th scope="col">Kategori / Spesifikasi</th>
-              <th scope="col">Tarif Jasa</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">Pasang Custom ROM</th>
-              <td>LineageOS, PixelOS, crDroid (Clean Flash &amp; Setup AOSP)</td>
-              <td>Rp75.000</td>
-            </tr>
-            <tr>
-              <th scope="row">Custom Recovery &amp; Root</th>
-              <td>TWRP, OrangeFox, PBRP + Root via ResukiSU, Magisk, atau APatch</td>
-              <td>Rp50.000</td>
-            </tr>
-            <tr>
-              <th scope="row">Pasang Custom Kernel</th>
-              <td>Flash kernel kustom untuk efisiensi daya, suhu, dan stabilitas</td>
-              <td>Rp45.000</td>
-            </tr>
-            <tr>
-              <th scope="row">Flash Fastboot &amp; Bootloop</th>
-              <td>Pemulihan stock firmware dan perbaikan sistem hang bootloop</td>
-              <td>Rp60.000</td>
-            </tr>
-            <tr>
-              <th scope="row">Debloat Android Vendor</th>
-              <td>Pembersihan bloatware vendor (Xiaomi/Samsung/Oppo/Realme) via ADB</td>
-              <td>Rp35.000</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="table-scroll" role="region" aria-labelledby="harga-android-caption" tabindex="0">
+          <table>
+            <caption id="harga-android-caption">Daftar tarif jasa modifikasi firmware dan sistem Android</caption>
+            <thead>
+              <tr>
+                <th scope="col">Jenis Layanan</th>
+                <th scope="col">Kategori / Spesifikasi</th>
+                <th scope="col">Tarif Jasa</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Pasang Custom ROM</th>
+                <td>LineageOS, PixelOS, crDroid (Clean Flash &amp; Setup AOSP)</td>
+                <td>Rp75.000</td>
+              </tr>
+              <tr>
+                <th scope="row">Custom Recovery &amp; Root</th>
+                <td>TWRP, OrangeFox, PBRP + Root via ResukiSU, Magisk, atau APatch</td>
+                <td>Rp50.000</td>
+              </tr>
+              <tr>
+                <th scope="row">Pasang Custom Kernel</th>
+                <td>Flash kernel kustom untuk efisiensi daya, suhu, dan stabilitas</td>
+                <td>Rp45.000</td>
+              </tr>
+              <tr>
+                <th scope="row">Flash Fastboot &amp; Bootloop</th>
+                <td>Pemulihan stock firmware dan perbaikan sistem hang bootloop</td>
+                <td>Rp60.000</td>
+              </tr>
+              <tr>
+                <th scope="row">Debloat Android Vendor</th>
+                <td>Pembersihan bloatware vendor (Xiaomi/Samsung/Oppo/Realme) via ADB</td>
+                <td>Rp35.000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
 
       <section aria-labelledby="harga-pc-title">
         <h2 id="harga-pc-title">Kategori Pemulihan Darurat &amp; Sistem PC</h2>
-        <table>
-          <caption>Daftar tarif pemulihan hardware unbrick dan konfigurasi sistem operasi PC</caption>
-          <thead>
-            <tr>
-              <th scope="col">Jenis Layanan</th>
-              <th scope="col">Kategori / Spesifikasi</th>
-              <th scope="col">Tarif Jasa</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">Unbrick SP Flash Tool (MTK)</th>
-              <td>Flashing scatter firmware untuk chipset MediaTek</td>
-              <td>Rp65.000</td>
-            </tr>
-            <tr>
-              <th scope="row">Unbrick QFIL (Snapdragon)</th>
-              <td>Flashing mode EDL 9008 untuk chipset Qualcomm Snapdragon</td>
-              <td>Rp75.000</td>
-            </tr>
-            <tr>
-              <th scope="row">Debloat Windows 10/11</th>
-              <td>Pembersihan telemetri, bloatware, dan optimasi RAM latar belakang</td>
-              <td>Rp45.000</td>
-            </tr>
-            <tr>
-              <th scope="row">Dual-Boot Windows + Linux</th>
-              <td>Windows 11 LTSC + CachyOS/Debian dengan partisi EFI dan GRUB rapi</td>
-              <td>Rp90.000</td>
-            </tr>
-            <tr>
-              <th scope="row">Backup &amp; Restore EFS / NVRAM</th>
-              <td>Pencadangan partisi vital jaringan radio dan nomor IMEI perangkat</td>
-              <td>Rp35.000</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="table-scroll" role="region" aria-labelledby="harga-pc-caption" tabindex="0">
+          <table>
+            <caption id="harga-pc-caption">Daftar tarif pemulihan hardware unbrick dan konfigurasi sistem operasi PC</caption>
+            <thead>
+              <tr>
+                <th scope="col">Jenis Layanan</th>
+                <th scope="col">Kategori / Spesifikasi</th>
+                <th scope="col">Tarif Jasa</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Unbrick SP Flash Tool (MTK)</th>
+                <td>Flashing scatter firmware untuk chipset MediaTek</td>
+                <td>Rp65.000</td>
+              </tr>
+              <tr>
+                <th scope="row">Unbrick QFIL (Snapdragon)</th>
+                <td>Flashing mode EDL 9008 untuk chipset Qualcomm Snapdragon</td>
+                <td>Rp75.000</td>
+              </tr>
+              <tr>
+                <th scope="row">Debloat Windows 10/11</th>
+                <td>Pembersihan telemetri, bloatware, dan optimasi RAM latar belakang</td>
+                <td>Rp45.000</td>
+              </tr>
+              <tr>
+                <th scope="row">Dual-Boot Windows + Linux</th>
+                <td>Windows 11 LTSC + CachyOS/Debian dengan partisi EFI dan GRUB rapi</td>
+                <td>Rp90.000</td>
+              </tr>
+              <tr>
+                <th scope="row">Backup &amp; Restore EFS / NVRAM</th>
+                <td>Pencadangan partisi vital jaringan radio dan nomor IMEI perangkat</td>
+                <td>Rp35.000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
     </main>
     <footer class="site-footer">
