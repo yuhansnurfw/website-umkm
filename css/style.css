@@ -84,7 +84,6 @@ code {
   font-size: 0.85rem;
 }
 
-/* Absolute skip link positioned outside viewport until focused. */
 .skip-link {
   position: absolute;
   top: -5rem;
@@ -114,7 +113,6 @@ button:focus-visible {
   border-bottom: 1px solid var(--color-border);
 }
 
-/* Brand logo and title lockup. */
 .brand {
   display: flex;
   margin-bottom: 0;
@@ -298,7 +296,6 @@ button:hover {
   color: var(--color-primary-strong);
 }
 
-/* Grid layout for showcase product list and section headers. */
 .product-list {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -478,7 +475,7 @@ audio {
   margin-block: var(--space-4);
 }
 
-/* Containing block for absolute badge element. */
+/* Anchors .product-badge to the card corner. */
 .product-card {
   position: relative;
   display: flex;
@@ -491,7 +488,6 @@ audio {
   box-shadow: var(--shadow-card);
 }
 
-/* Positioned badge pinned to top-right corner. */
 .product-badge {
   position: absolute;
   top: var(--space-3);
@@ -802,7 +798,6 @@ th {
   }
 }
 
-/* P09: Output JavaScript */
 .js-product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
@@ -818,8 +813,13 @@ th {
 }
 
 .js-product-card h3 {
-  margin-top: var(--space-4);
+  margin-top: 0;
   color: var(--color-primary);
+}
+
+.category-note {
+  color: var(--color-muted);
+  font-size: 0.9rem;
 }
 
 .stock-badge {
@@ -841,6 +841,16 @@ th {
 .stock-badge.empty {
   background: #fee2e2;
   color: #991b1b;
+}
+
+#produk-unggulan {
+  font-weight: 700;
+  color: var(--color-primary, #6f3b1f);
+}
+
+#ringkasan-kategori {
+  font-weight: 700;
+  color: var(--color-primary, #6f3b1f);
 }
 
 
