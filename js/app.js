@@ -46,8 +46,6 @@ function formatRupiah(nilai) {
   }).format(nilai);
 }
 
-console.log(formatRupiah(75000));
-
 function statusStok(stok) {
   if (stok <= 0) {
     return { label: "Habis", className: "empty" };
@@ -59,10 +57,6 @@ function statusStok(stok) {
 
   return { label: "Tersedia", className: "" };
 }
-
-console.log(statusStok(0));
-console.log(statusStok(4));
-console.log(statusStok(10));
 
 function labelKategori(kategori) {
   switch (kategori) {
@@ -77,19 +71,6 @@ function labelKategori(kategori) {
     default:
       return "Layanan JasaOprek";
   }
-}
-
-function buatKartuProduk(produk) {
-  const status = statusStok(produk.stok);
-
-  return `
-    <article class="js-product-card">
-      <h3>${produk.nama}</h3>
-      <p class="category-note">${produk.kategori}</p>
-      <p class="price">${formatRupiah(produk.harga)}</p>
-      <span class="stock-badge ${status.className}">${status.label}</span>
-    </article>
-  `;
 }
 
 function hitungHargaPromo(produk) {
@@ -118,42 +99,113 @@ function hitungRingkasanKategori() {
     .join(", ");
 }
 
-function renderProduk() {
-  const grid = document.querySelector("#produk-dinamis");
-  const ringkasan = document.querySelector("#produk-ringkasan");
-  const unggulan = document.querySelector("#produk-unggulan");
-  const kategoriRingkasan = document.querySelector("#ringkasan-kategori");
+const produkGrid = document.querySelector("#produk-grid");
+const produkStatus = document.querySelector("#produk-status");
+const tombolFilter = document.querySelectorAll("[data-filter]");
+const produkUnggulanEl = document.querySelector("#produk-unggulan");
+const ringkasanKategoriEl = document.querySelector("#ringkasan-kategori");
 
+function buatElemenProduk(produk) {
+  const card = document.createElement("article");
+  card.classList.add("product-card");
+
+  const title = document.createElement("h3");
+  title.textContent = produk.nama;
+
+  const category = document.createElement("p");
+  category.classList.add("category-note");
+  category.textContent = `${produk.kategori} (${labelKategori(produk.kategori)})`;
+
+  const price = document.createElement("p");
+  price.classList.add("price");
+  price.textContent = formatRupiah(produk.harga);
+
+  const stock = document.createElement("span");
+  const status = statusStok(produk.stok);
+  stock.classList.add("stock-badge");
+  if (status.className) {
+    stock.classList.add(status.className);
+  }
+  stock.textContent = status.label;
+
+  const removeButton = document.createElement("button");
+  removeButton.type = "button";
+  removeButton.textContent = "Sembunyikan";
+  removeButton.classList.add("ghost-button");
+
+  // Removes the card node from the DOM only; produkUmkm stays intact for re-filtering.
+  removeButton.addEventListener("click", () => {
+    card.remove();
+    produkStatus.textContent = "Satu kartu disembunyikan dari tampilan sementara.";
+  });
+
+  card.append(title, category, price, stock, removeButton);
+  return card;
+}
+
+function buatEmptyState(kategori) {
+  const empty = document.createElement("p");
+  empty.classList.add("empty-state");
+  empty.textContent = `Belum ada produk pada kategori ${kategori}.`;
+  return empty;
+}
+
+function renderProduk(kategoriAktif = "Semua") {
   // app.js is loaded across all pages; exit early when catalog containers are absent.
-  if (!grid || !ringkasan || !unggulan) {
-    console.warn("Target render produk belum lengkap.");
+  if (!produkGrid || !produkStatus) {
+    console.warn("Target render produk tidak ditemukan.");
     return;
   }
 
-  produkUmkm.forEach((produk) => {
-    console.log("Debug produk:", produk.nama, "stok:", produk.stok);
-  });
+  const produkTampil = kategoriAktif === "Semua"
+    ? produkUmkm
+    : produkUmkm.filter((produk) => produk.kategori === kategoriAktif);
 
-  const produkTersedia = produkUmkm.filter((produk) => produk.stok > 0);
+  console.log("Render kategori:", kategoriAktif);
+  console.table(produkTampil);
+
+  produkGrid.replaceChildren();
+
   const produkUnggulan = produkUmkm.find((produk) => produk.unggulan === true);
-  const markupProduk = produkTersedia.map(buatKartuProduk).join("");
-  const ringkasanKategori = hitungRingkasanKategori();
-
-  console.log("Ringkasan kategori:", ringkasanKategori);
-  console.log(produkTersedia);
-  console.log(produkUnggulan);
-
-  grid.innerHTML = markupProduk;
-  ringkasan.textContent = `${produkTersedia.length} produk tersedia dari ${produkUmkm.length} data.`;
-  unggulan.textContent = produkUnggulan
-    ? `Produk unggulan: ${produkUnggulan.nama}`
-    : "Belum ada produk unggulan.";
-
-  if (kategoriRingkasan) {
-    kategoriRingkasan.textContent = `Ringkasan kategori: ${ringkasanKategori}`;
+  if (produkUnggulanEl) {
+    produkUnggulanEl.textContent = produkUnggulan
+      ? `Produk unggulan: ${produkUnggulan.nama}`
+      : "Belum ada produk unggulan.";
   }
 
-  console.table(produkUmkm);
+  if (ringkasanKategoriEl) {
+    ringkasanKategoriEl.textContent = `Ringkasan kategori: ${hitungRingkasanKategori()}`;
+  }
+
+  if (produkTampil.length === 0) {
+    produkGrid.append(buatEmptyState(kategoriAktif));
+    produkStatus.textContent = `0 produk ditemukan (Kategori ${kategoriAktif} menampilkan 0 produk dari ${produkUmkm.length} total produk).`;
+    return;
+  }
+
+  produkTampil.forEach((produk) => {
+    produkGrid.append(buatElemenProduk(produk));
+  });
+
+  produkStatus.textContent = `${produkTampil.length} produk ditampilkan (Kategori ${kategoriAktif} menampilkan ${produkTampil.length} produk dari ${produkUmkm.length} total produk).`;
 }
 
-document.addEventListener("DOMContentLoaded", renderProduk);
+tombolFilter.forEach((tombol) => {
+  tombol.addEventListener("click", (event) => {
+    const tombolAktif = event.currentTarget;
+    const kategori = tombolAktif.dataset.filter;
+
+    tombolFilter.forEach((item) => item.classList.remove("is-active"));
+    tombolAktif.classList.add("is-active");
+
+    renderProduk(kategori);
+  });
+});
+
+if (produkGrid && produkStatus) {
+  console.log("Target grid:", produkGrid);
+  console.log("Target status:", produkStatus);
+  console.log("Jumlah tombol filter:", tombolFilter.length);
+}
+
+renderProduk();

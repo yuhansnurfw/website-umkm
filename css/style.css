@@ -798,23 +798,84 @@ th {
   }
 }
 
-.js-product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-  gap: var(--space-4);
+.product-section {
+  margin-block: var(--space-5);
 }
 
-.js-product-card {
-  position: relative;
-  padding: var(--space-4);
+.section-heading h2 {
+  text-align: left;
+  margin-block: 0 var(--space-2);
+}
+
+.produk-status {
+  margin-block: 0 var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-cerah);
+  color: var(--color-primary-strong);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  background: var(--color-surface);
+  border-radius: var(--radius-sm);
+  font-weight: 700;
 }
 
-.js-product-card h3 {
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-block: 1rem 1.5rem;
+}
+
+.filter-button {
+  min-height: 2.75rem;
+  border: 1px solid var(--color-border, #cbd5e1);
+  border-radius: 999px;
+  background: var(--color-surface, #ffffff);
+  color: var(--color-text, #1f2937);
+  padding: 0.65rem 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.filter-button:hover,
+.filter-button:focus-visible {
+  background: var(--color-cerah, #fbe8ea);
+  color: var(--color-primary-strong, #59091c);
+  border-color: var(--color-primary, #7b1129);
+  outline: 3px solid rgb(123 17 41 / 20%);
+  outline-offset: 2px;
+}
+
+.filter-button.is-active,
+.filter-button.is-active:hover {
+  background: var(--color-primary, #7b1129);
+  border-color: var(--color-primary, #7b1129);
+  color: var(--color-surface, #ffffff);
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  margin: 0;
+  border: 1px dashed var(--color-muted, #6d5b5e);
+  border-radius: var(--radius-md, 0.875rem);
+  padding: var(--space-4, 1.5rem);
+  background: var(--color-surface, #ffffff);
+  color: var(--color-muted, #6d5b5e);
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Dynamic cards in #produk-grid have no corner .product-badge, so h3 needs no top offset. */
+#produk-grid .product-card h3 {
   margin-top: 0;
+  margin-bottom: var(--space-1);
+}
+
+#produk-grid .product-card .price {
+  margin-top: auto;
+  margin-bottom: var(--space-2);
   color: var(--color-primary);
+  font-size: 1.1rem;
+  font-weight: 700;
 }
 
 .category-note {
@@ -823,9 +884,10 @@ th {
 }
 
 .stock-badge {
+  align-self: flex-start;
   display: inline-flex;
-  margin-block-start: var(--space-2);
-  padding: 0.25rem 0.6rem;
+  margin-block-start: var(--space-1);
+  padding: 0.25rem 0.65rem;
   border-radius: 999px;
   font-size: 0.85rem;
   font-weight: 700;
@@ -843,12 +905,34 @@ th {
   color: #991b1b;
 }
 
+.ghost-button {
+  align-self: flex-start;
+  min-height: 2.75rem;
+  margin-top: var(--space-3);
+  padding: 0.45rem 0.85rem;
+  background: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.ghost-button:hover,
+.ghost-button:focus-visible {
+  background: var(--color-cerah);
+  color: var(--color-primary-strong);
+  border-color: var(--color-primary);
+}
+
 #produk-unggulan {
+  margin-block: 0 var(--space-1);
   font-weight: 700;
   color: var(--color-primary, #6f3b1f);
 }
 
 #ringkasan-kategori {
+  margin-block: 0;
   font-weight: 700;
   color: var(--color-primary, #6f3b1f);
 }

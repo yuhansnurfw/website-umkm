@@ -41,15 +41,25 @@
         <figcaption>Daftar penanganan modifikasi sistem Android dan komputer bergaransi dengan pencadangan partisi vital.</figcaption>
       </figure>
 
-      <section class="section" aria-labelledby="produk-dinamis-title">
-        <div class="section-header">
-          <p class="eyebrow">Data JavaScript</p>
-          <h2 id="produk-dinamis-title">Produk dari Data Lokal</h2>
-          <p id="produk-ringkasan">Data produk akan dimuat melalui JavaScript.</p>
+      <section class="product-section" aria-labelledby="produk-title">
+        <div class="section-heading">
+          <p class="eyebrow">Katalog Layanan</p>
+          <h2 id="produk-title">Katalog Layanan JasaOprek</h2>
+          <p id="produk-status" class="produk-status" aria-live="polite">Produk belum dimuat.</p>
           <p id="produk-unggulan">Produk unggulan akan ditentukan melalui JavaScript.</p>
           <p id="ringkasan-kategori">Ringkasan kategori akan dimuat melalui JavaScript.</p>
         </div>
-        <div id="produk-dinamis" class="js-product-grid"></div>
+
+        <div class="filter-bar" aria-label="Filter kategori produk">
+          <button type="button" class="filter-button is-active" data-filter="Semua">Semua</button>
+          <button type="button" class="filter-button" data-filter="Firmware">Firmware</button>
+          <button type="button" class="filter-button" data-filter="Recovery">Recovery</button>
+          <button type="button" class="filter-button" data-filter="Unbrick">Unbrick</button>
+          <button type="button" class="filter-button" data-filter="Optimasi">Optimasi</button>
+          <button type="button" class="filter-button" data-filter="Hardware">Hardware</button>
+        </div>
+
+        <div id="produk-grid" class="product-grid" aria-live="polite"></div>
       </section>
 
       <section aria-labelledby="produk-pilihan-title">
