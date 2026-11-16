@@ -151,9 +151,8 @@ function buatEmptyState(kategori) {
 }
 
 function renderProduk(kategoriAktif = "Semua") {
-  // app.js is loaded across all pages; exit early when catalog containers are absent.
+  // Exit silently when the page does not contain product catalog containers.
   if (!produkGrid || !produkStatus) {
-    console.warn("Target render produk tidak ditemukan.");
     return;
   }
 

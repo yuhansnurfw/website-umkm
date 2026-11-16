@@ -667,6 +667,32 @@ th {
   line-height: 1.6;
 }
 
+.status-form {
+  max-width: 700px;
+  margin: var(--space-3) auto;
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.status-form.status-error {
+  border-color: #b91c1c;
+  background: #fef2f2;
+  color: #991b1b;
+  font-weight: 600;
+}
+
+.status-form.status-success {
+  border-color: #15803d;
+  background: #f0fdf4;
+  color: #166534;
+  font-weight: 600;
+}
+
 #form-kontak {
   max-width: 700px;
   margin: var(--space-4) auto;
@@ -703,6 +729,21 @@ th {
   font: inherit;
 }
 
+input[aria-invalid="true"],
+select[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  border-color: #b91c1c !important;
+  box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.16) !important;
+}
+
+.field-error {
+  min-height: 1.35rem;
+  margin: 0.35rem 0 0;
+  color: #b91c1c;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
 #form-kontak fieldset {
   margin: 0 0 var(--space-3);
   padding: var(--space-3);
@@ -710,12 +751,35 @@ th {
   border-radius: var(--radius-sm);
 }
 
-#form-kontak fieldset label {
-  margin-top: var(--space-2);
+.radio-options {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.radio-options label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  margin: 0;
 }
 
 #form-kontak input[type="radio"] {
   margin-right: var(--space-1);
+}
+
+.field-checkbox label {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.field-checkbox input[type="checkbox"] {
+  width: auto;
+  margin-top: 0.25rem;
 }
 
 #form-kontak button {
@@ -735,15 +799,98 @@ th {
   background: var(--color-primary-strong);
 }
 
-#preview-form {
+.preferensi-panel,
+.preview-panel {
   max-width: 700px;
-  margin: var(--space-3) auto;
+  margin: var(--space-4) auto;
   padding: var(--space-3);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.preferensi-panel h2,
+.preview-panel h2 {
+  margin-top: 0;
+  margin-bottom: var(--space-2);
+  text-align: left;
+}
+
+.preferensi-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-block: var(--space-3);
+}
+
+.preferensi-options label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.preferensi-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.button-secondary {
+  padding: var(--space-2) var(--space-3);
+  background: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.button-secondary:hover {
+  background: var(--color-cerah);
+  color: var(--color-primary-strong);
+}
+
+.status-preferensi {
+  min-height: 1.35rem;
+  margin-top: var(--space-2);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.status-preferensi.status-success {
+  color: #166534;
+}
+
+.status-preferensi.status-error {
+  color: #991b1b;
+}
+
+.status-preferensi.status-warning {
+  color: #b45309;
+}
+
+.status-preferensi.status-info {
+  color: var(--color-muted);
+}
+
+.preview-box {
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: var(--space-3);
+  background: var(--color-surface-soft);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   white-space: pre-wrap;
+  word-break: break-word;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 #kontak-lanjut {

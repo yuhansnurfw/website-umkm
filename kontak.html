@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
     <script src="js/form.js" defer></script>
+    <script src="js/newsletter.js" defer></script>
     <script src="js/app.js" defer></script>
   </head>
   <body>
@@ -38,90 +39,125 @@
       <h1>Kontak JasaOprek</h1>
       <p>Silakan kirimkan pertanyaan seputar modifikasi Android, penanganan unbrick, flashing firmware, serta optimasi dan instalasi dual-boot sistem operasi PC.</p>
 
-      <form id="form-kontak" action="#" method="post">
+      <p id="status-form" class="status-form" aria-live="polite">Silakan lengkapi formulir konsultasi servis dengan data yang valid.</p>
+
+      <form id="form-kontak" novalidate>
         <div class="field">
           <label for="nama">Nama lengkap</label>
-          <input id="nama" name="nama" type="text" autocomplete="name" required minlength="3" placeholder="Contoh: Fakhri Yuhans" />
+          <input id="nama" name="nama" type="text" autocomplete="name" required minlength="3" placeholder="Contoh: Fakhri Yuhans" aria-describedby="nama-error" />
+          <p id="nama-error" class="field-error" aria-live="polite"></p>
         </div>
 
         <div class="field">
           <label for="email">Email</label>
-          <input id="email" name="email" type="email" autocomplete="email" required placeholder="nama@domain.com" />
+          <input id="email" name="email" type="email" autocomplete="email" required placeholder="nama@domain.com" aria-describedby="email-error" />
+          <p id="email-error" class="field-error" aria-live="polite"></p>
         </div>
 
         <div class="field">
-          <label for="whatsapp">No. whatsapp</label>
-          <input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel" required minlength="10" placeholder="Contoh: 081234567890" />
+          <label for="telepon">No. WhatsApp / Telepon</label>
+          <input id="telepon" name="telepon" type="tel" autocomplete="tel" required pattern="^08[0-9]{8,11}$" placeholder="Contoh: 081234567890" aria-describedby="telepon-error" />
+          <p id="telepon-error" class="field-error" aria-live="polite"></p>
         </div>
 
         <div class="field">
           <label for="tanggal">Tanggal Servis / Konsultasi</label>
-          <input id="tanggal" name="tanggal" type="date" required />
+          <input id="tanggal" name="tanggal" type="date" required aria-describedby="tanggal-error" />
+          <p id="tanggal-error" class="field-error" aria-live="polite"></p>
         </div>
 
         <div class="field">
           <label for="waktu">Waktu Pengerjaan / Dihubungi</label>
-          <input id="waktu" name="waktu" type="time" required />
+          <input id="waktu" name="waktu" type="time" required aria-describedby="waktu-error" />
+          <p id="waktu-error" class="field-error" aria-live="polite"></p>
         </div>
 
-        <fieldset>
+        <fieldset aria-describedby="topik-error">
           <legend>Topik pertanyaan</legend>
+          <div class="radio-options">
+            <label>
+              <input type="radio" name="topik" value="paket" required />
+              Paket layanan servis
+            </label>
 
-          <label>
-            <input type="radio" name="topik" value="paket" required />
-            Paket layanan servis
-          </label>
+            <label>
+              <input type="radio" name="topik" value="konsultasi" />
+              Konsultasi tipe chipset &amp; ROM
+            </label>
 
-          <label>
-            <input type="radio" name="topik" value="konsultasi" />
-            Konsultasi tipe chipset &amp; ROM
-          </label>
+            <label>
+              <input type="radio" name="topik" value="status-servis" />
+              Status pengerjaan perangkat
+            </label>
 
-          <label>
-            <input type="radio" name="topik" value="status-servis" />
-            Status pengerjaan perangkat
-          </label>
-
-          <label>
-            <input type="radio" name="topik" value="kerja-sama" />
-            Kerja sama teknis
-          </label>
+            <label>
+              <input type="radio" name="topik" value="kerja-sama" />
+              Kerja sama teknis
+            </label>
+          </div>
+          <p id="topik-error" class="field-error" aria-live="polite"></p>
         </fieldset>
 
         <div class="field" id="kategori-saran">
           <label for="kategori">Kategori Chipset / Perangkat</label>
-          <select id="kategori" name="kategori">
+          <select id="kategori" name="kategori" aria-describedby="kategori-error">
             <option value="">Pilih kategori perangkat</option>
             <option value="qualcomm">Qualcomm Snapdragon (Fastboot / EDL 9008)</option>
             <option value="mediatek">MediaTek (SP Flash Tool / Scatter)</option>
             <option value="exynos-unisoc">Exynos / Unisoc / Google Tensor</option>
             <option value="pc-laptop">PC / Laptop (Dual-Boot &amp; Windows/Linux)</option>
           </select>
+          <p id="kategori-error" class="field-error" aria-live="polite"></p>
         </div>
 
         <div class="field">
           <label for="paket">Paket layanan</label>
-          <select id="paket" name="paket" required>
-            <option value="">Pilih paket</option>
+          <select id="paket" name="paket" required aria-describedby="paket-error">
+            <option value="">Pilih paket yang diminati</option>
             <option value="custom-rom">Pasang Custom ROM (LineageOS / PixelOS / crDroid)</option>
             <option value="custom-recovery">Custom Recovery &amp; Root (TWRP / OrangeFox / Magisk / APatch)</option>
             <option value="unbrick">Flash Fastboot &amp; Unbrick (MTK / Qualcomm)</option>
             <option value="debloat">Debloat Sistem (Android &amp; Windows)</option>
             <option value="dualboot">Dual-Boot OS (Windows 11 LTSC + CachyOS Linux)</option>
           </select>
+          <p id="paket-error" class="field-error" aria-live="polite"></p>
         </div>
 
         <div class="field">
           <label for="pesan">Detail Merk, Tipe, dan Kendala Perangkat</label>
-          <textarea id="pesan" name="pesan" rows="5" required minlength="10" placeholder="Sebutkan detail perangkat dan kebutuhan oprek..."></textarea>
+          <textarea id="pesan" name="pesan" rows="5" required minlength="20" placeholder="Sebutkan detail perangkat dan kebutuhan oprek (minimal 20 karakter)..." aria-describedby="pesan-error"></textarea>
+          <p id="pesan-error" class="field-error" aria-live="polite"></p>
         </div>
 
-        <button type="submit">Kirim Pesan</button>
+        <div class="field field-checkbox">
+          <label>
+            <input type="checkbox" id="setuju" name="setuju" required aria-describedby="setuju-error" />
+            Saya mengonfirmasi bahwa data perangkat sudah benar dan menyetujui ketentuan servis JasaOprek.
+          </label>
+          <p id="setuju-error" class="field-error" aria-live="polite"></p>
+        </div>
+
+        <button type="submit" id="btn-submit">Validasi dan Preview Pengajuan</button>
       </form>
 
-      <section aria-labelledby="preview-title">
-        <h2 id="preview-title">Preview Data</h2>
-        <pre id="preview-form" aria-live="polite">Data form akan muncul setelah tombol Kirim Pesan diklik</pre>
+      <section class="panel preferensi-panel" aria-labelledby="preferensi-title">
+        <h2 id="preferensi-title">Preferensi Saluran Konsultasi</h2>
+        <p>Pilih saluran komunikasi yang Anda sukai untuk menerima pembaruan status pengerjaan perangkat.</p>
+        <div class="preferensi-options">
+          <label><input type="checkbox" value="whatsapp" data-channel /> WhatsApp</label>
+          <label><input type="checkbox" value="email" data-channel /> Email</label>
+          <label><input type="checkbox" value="telegram" data-channel /> Telegram</label>
+        </div>
+        <div class="preferensi-actions">
+          <button type="button" id="simpan-preferensi">Simpan Preferensi</button>
+          <button type="button" id="hapus-preferensi" class="button-secondary">Hapus Preferensi</button>
+        </div>
+        <p id="status-preferensi" class="status-preferensi" aria-live="polite"></p>
+      </section>
+
+      <section class="panel preview-panel" aria-labelledby="preview-title">
+        <h2 id="preview-title">Preview Data Pengajuan</h2>
+        <pre id="preview-form" class="preview-box" aria-live="polite">Preview akan muncul setelah seluruh form terisi dengan valid.</pre>
       </section>
 
       <section aria-labelledby="kontak-lanjut">
